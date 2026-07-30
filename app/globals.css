@@ -19,8 +19,60 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+  overflow-x: hidden !important;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.main {
+  overflow-x: hidden;
+}
+
+.section-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 780px) {
+  .section-nav {
+    display: none !important;
+  }
+  .section-div {
+    width: auto !important;
+    flex: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stack {
+    flex-direction: column !important;
+    height: auto;
+    align-self: center;
+    width: 100%;
+  }
+  .about-stack > * {
+    width: 100% !important;
+  }
 }

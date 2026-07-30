@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "elk-components": ["./app/lib/elk-components"]
     }
   },
   "include": [
