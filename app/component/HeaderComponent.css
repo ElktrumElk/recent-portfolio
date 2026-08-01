@@ -4,6 +4,27 @@
     z-index: 50;
 }
 
+.nav-pill {
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.nav-pill a {
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--font-space-grotesk);
+    transition: color 0.25s ease;
+}
+
+.nav-pill:hover {
+    background: linear-gradient(90deg, var(--primary), var(--blue));
+}
+
+.nav-pill:hover,
+.nav-pill:hover a {
+    color: #ffffff;
+}
+
 .theme-toggle,
 .hamburger {
     display: inline-flex;

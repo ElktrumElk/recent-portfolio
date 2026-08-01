@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   Gap,
   Header,
-  Hover,
   Icon,
   Icons,
   List,
@@ -23,11 +22,6 @@ const links = [
   { href: "#stack", label: "Stack" },
   { href: "#contacts", label: "Contacts" },
 ];
-
-const pillStyle: React.CSSProperties = {
-  background: "linear-gradient(90deg, var(--primary), var(--blue))",
-  color: "#ffffff",
-};
 
 const HeaderComponet = (): React.ReactNode => {
   const [open, setOpen] = useState(false);
@@ -64,19 +58,15 @@ const HeaderComponet = (): React.ReactNode => {
                   child={() => (
                     <>
                       {links.map((link) => (
-                        <Hover
+                        <List
                           key={link.href}
-                          style={pillStyle}
+                          className="nav-pill"
+                          style={{
+                            padding: ".2rem 1rem",
+                            borderRadius: "1rem",
+                          }}
                           child={() => (
-                            <List
-                              style={{
-                                padding: ".2rem 1rem",
-                                borderRadius: "1rem",
-                              }}
-                              child={() => (
-                                <Link href={link.href}>{link.label}</Link>
-                              )}
-                            />
+                            <Link href={link.href}>{link.label}</Link>
                           )}
                         />
                       ))}
