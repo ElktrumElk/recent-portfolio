@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Gap,
   Header,
@@ -12,16 +13,46 @@ import {
   Text,
 } from "elk-components";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
+import "./HeaderComponent.css";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contacts", label: "Contacts" },
+];
+
+const pillStyle: React.CSSProperties = {
+  background: "linear-gradient(90deg, var(--primary), var(--blue))",
+  color: "#ffffff",
+};
 
 const HeaderComponet = (): React.ReactNode => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <>
+    <div className="header-root">
       <Header
-        style={{ backdropFilter: "blur(10px)" }}
-        underLine="1px solid #ffffff3f"
-        leading={() => <Icon icon={Icons.icon.Zap} color="#00ffbf" />}
+        style={{
+          backdropFilter: "blur(12px)",
+          background: "var(--header-bg)",
+          position: "relative",
+        }}
+        underLine="1px solid var(--border)"
+        leading={() => <Icon icon={Icons.icon.Zap} color="var(--accent)" />}
         title={() => (
-          <Text text="Elktrum Elk" type="h1" style={{ color: "#e6f6ff" }} />
+          <Text
+            text="Elktrum Elk"
+            type="h1"
+            style={{
+              color: "var(--fg)",
+              fontFamily: "var(--font-fraunces)",
+              fontWeight: 700,
+              fontSize: "1.3rem",
+            }}
+          />
         )}
         action={() => (
           <div className="section-div">
@@ -32,91 +63,23 @@ const HeaderComponet = (): React.ReactNode => {
                   style={{ display: "flex", gap: ".5rem" }}
                   child={() => (
                     <>
-                      <Hover
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                          color: "black",
-                        }}
-                        child={() => (
-                          <List
-                            style={{
-                              padding: ".2rem 1rem",
-                              borderRadius: "1rem",
-                            }}
-                            child={() => <Link href={"#about"}>About</Link>}
-                          />
-                        )}
-                      />
-
-                      <Hover
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                          color: "black",
-                        }}
-                        child={() => (
-                          <List
-                            style={{
-                              padding: ".2rem 1rem",
-                              borderRadius: "1rem",
-                            }}
-                            child={() => <Link href={"#skills"}>Skills</Link>}
-                          />
-                        )}
-                      />
-                      <Hover
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                          color: "black",
-                        }}
-                        child={() => (
-                          <List
-                            style={{
-                              padding: ".2rem 1rem",
-                              borderRadius: "1rem",
-                            }}
-                            child={() => (
-                              <Link href={"#projects"}>Projects</Link>
-                            )}
-                          />
-                        )}
-                      />
-                      <Hover
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                          color: "black",
-                        }}
-                        child={() => (
-                          <List
-                            style={{
-                              padding: ".2rem 1rem",
-                              borderRadius: "1rem",
-                            }}
-                            child={() => <Link href={"#stack"}>Stack</Link>}
-                          />
-                        )}
-                      />
-                      <Hover
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                          color: "black",
-                        }}
-                        child={() => (
-                          <List
-                            style={{
-                              padding: ".2rem 1rem",
-                              borderRadius: "1rem",
-                            }}
-                            child={() => (
-                              <Link href={"#contacts"}>Contacts</Link>
-                            )}
-                          />
-                        )}
-                      />
+                      {links.map((link) => (
+                        <Hover
+                          key={link.href}
+                          style={pillStyle}
+                          child={() => (
+                            <List
+                              style={{
+                                padding: ".2rem 1rem",
+                                borderRadius: "1rem",
+                              }}
+                              child={() => (
+                                <Link href={link.href}>{link.label}</Link>
+                              )}
+                            />
+                          )}
+                        />
+                      ))}
                     </>
                   )}
                 />
@@ -126,11 +89,11 @@ const HeaderComponet = (): React.ReactNode => {
             <Navigator
               className="section-nav"
               child={() => (
-                <>
+                <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
                   <Link
                     href={"https://github.com/ElktrumElk"}
                     target="_blank"
-                    style={{ color: "grey" }}
+                    style={{ color: "var(--fg)", display: "flex" }}
                   >
                     <svg
                       width="20"
@@ -146,7 +109,7 @@ const HeaderComponet = (): React.ReactNode => {
                   <Link
                     href={"https://x.com/ElktrumElk"}
                     target="_blank"
-                    style={{ color: "grey" }}
+                    style={{ color: "var(--fg)", display: "flex" }}
                   >
                     <svg
                       width="20"
@@ -157,13 +120,59 @@ const HeaderComponet = (): React.ReactNode => {
                       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
                   </Link>
-                </>
+                </div>
               )}
             />
+
+            <ThemeToggle />
+
+            <button
+              type="button"
+              className="hamburger"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={open}
+            >
+              <Icon
+                icon={open ? Icons.icon.Close : Icons.icon.HambuggerMenu}
+                size={20}
+                color="currentColor"
+              />
+            </button>
           </div>
         )}
       />
-    </>
+
+      {open && (
+        <nav className="mobile-menu" aria-label="Primary">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} onClick={() => setOpen(false)}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mobile-menu__social">
+            <Link
+              href={"https://github.com/ElktrumElk"}
+              target="_blank"
+              aria-label="GitHub"
+            >
+              GitHub
+            </Link>
+            <Link
+              href={"https://x.com/ElktrumElk"}
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
+              X
+            </Link>
+          </div>
+        </nav>
+      )}
+    </div>
   );
 };
 

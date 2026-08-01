@@ -1,5 +1,14 @@
 "use client";
-import { Card, Container, Gap, Icon, Icons, Stack, Text } from "elk-components";
+import {
+  Animation,
+  Card,
+  Container,
+  Gap,
+  Icon,
+  Icons,
+  Stack,
+  Text,
+} from "elk-components";
 
 const data = [
   {
@@ -7,14 +16,14 @@ const data = [
     icon: Icons.icon.UserPlus,
     description: "50+",
     type: "Happy Client",
-    color: "#0affe7",
+    color: "#205a8a",
   },
   {
     id: 2,
     icon: Icons.icon.Wind,
     description: "3 years",
     type: "Experience",
-    color: "#ffd91d",
+    color: "#c0512f",
   },
 
   {
@@ -22,7 +31,7 @@ const data = [
     icon: Icons.icon.Layers,
     description: "9+",
     type: "Stack",
-    color: "#59ff00",
+    color: "#2f6b53",
   },
 ];
 
@@ -42,36 +51,67 @@ const About = () => {
         }}
         child={() => (
           <>
-            <Text
-              type="h1"
-              text="Elkanah Cole"
-              color="#fff"
-              size="3rem"
-              style={{ fontWeight: "bold" }}
+            <Animation
+              initial={{ opacity: "0", transform: "translateX(-30%)" }}
+              whileInView={{ opacity: "1", transform: "translateX(0%)" }}
+              exit={{ opacity: "0", transform: "translateX(-30%)" }}
+              child={() => (
+                <Text
+                  type="h1"
+                  text="Elkanah Cole"
+                  color="var(--fg)"
+                  size="3rem"
+                  style={{
+                    fontWeight: 900,
+                    fontFamily: "var(--font-fraunces)",
+                    letterSpacing: "-0.02em",
+                  }}
+                />
+              )}
             />
 
-            <Text
-              type="p"
-              text={`A fullstack develpoer developing both mobile and web application with sophisticated interface,
+            <Animation
+              initial={{ opacity: "0", transform: "translateY(50%)" }}
+              whileInView={{ opacity: "1", transform: "translateY(0%)" }}
+              child={() => (
+                <Text
+                  type="p"
+                  text={`A fullstack develpoer developing both mobile and web application with sophisticated interface,
                  easily accessible to users. ''I believe for one to go fast one need to be alone but for one to go 
                  far need team with high level of effort.''
                  \n
                  `}
-              color="#a0a7a7"
-              size="1rem"
-              style={{ fontWeight: "bold" }}
+                  color="var(--muted)"
+                  size="1rem"
+                  style={{
+                    fontWeight: "normal",
+                    fontFamily: "var(--font-space-grotesk)",
+                    lineHeight: "1.7",
+                  }}
+                />
+              )}
             />
 
             <Gap height="1rem" />
 
-            <Text
-              type="p"
-              text={` My goal is to develop and solve human problems which can be solved by technology and help inspired yound ones. I am not only good in technology  
+            <Animation
+              initial={{ opacity: "0", transform: "translateY(-30%)" }}
+              whileInView={{ opacity: "1", transform: "translateY(0%)" }}
+              child={() => (
+                <Text
+                  type="p"
+                  text={` My goal is to develop and solve human problems which can be solved by technology and help inspired yound ones. I am not only good in technology  
                 but good with communication and environment interaction. 
                  `}
-              color="#a0a7a7"
-              size="1rem"
-              style={{ fontWeight: "bold" }}
+                  color="var(--muted)"
+                  size="1rem"
+                  style={{
+                    fontWeight: "normal",
+                    fontFamily: "var(--font-space-grotesk)",
+                    lineHeight: "1.7",
+                  }}
+                />
+              )}
             />
 
             <Gap height="3rem" />
@@ -85,9 +125,16 @@ const About = () => {
                   {data.map((data, key) => (
                     <Card
                       shadow
-                      shadowColor="#252525"
+                      shadowColor="var(--shadow)"
+                      backgroundColor="var(--card)"
+                      borderColor="var(--border)"
                       key={key}
-                      bodyStyle={{ display: "flex", flexDirection: "column" }}
+                      bodyStyle={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
                       body={() => (
                         <>
                           <Icon icon={data.icon} color={data.color} />
@@ -96,9 +143,21 @@ const About = () => {
                             type="p"
                             text={data.description}
                             size="1.4rem"
+                            color="var(--fg)"
+                            style={{
+                              fontWeight: 700,
+                              fontFamily: "var(--font-space-grotesk)",
+                            }}
                           />
 
-                          <Text type="p" text={data.type} />
+                          <Text
+                            type="p"
+                            text={data.type}
+                            color="var(--muted)"
+                            style={{
+                              fontFamily: "var(--font-space-grotesk)",
+                            }}
+                          />
                         </>
                       )}
                     />

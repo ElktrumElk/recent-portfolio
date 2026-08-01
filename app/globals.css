@@ -1,22 +1,74 @@
 @import "tailwindcss";
 
+/* ---------- Light theme (masculine postcard) ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --bg: #ece7de;
+  --bg-soft: #dcd2c2;
+  --fg: #1c2733;
+  --muted: #5f6b74;
+  --card: #f8f4ec;
+  --border: rgba(28, 39, 51, 0.16);
+  --header-bg: rgba(236, 231, 222, 0.6);
+  --shadow: rgba(28, 39, 51, 0.18);
+
+  --primary: #205a8a;
+  --blue: #2f6f9f;
+  --secondary: #2f6b53;
+  --accent: #c0512f;
+  --amber: #c9992e;
+
+  --wash-1: #e6d3a8;
+  --wash-2: #ccdce7;
+  --wash-3: #ddd2bd;
+
+  --splash-a: #205a8a;
+  --splash-b: #c0512f;
+  --splash-c: #c9992e;
+  --bubble-a: #c3dced;
+  --bubble-b: #eecfbe;
+  --bubble-c: #ecdcb4;
+}
+
+/* ---------- Dark theme (masculine) ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f1419;
+  --bg-soft: #1a222b;
+  --fg: #e6eaee;
+  --muted: #9aa7b2;
+  --card: #1a222b;
+  --border: rgba(230, 234, 238, 0.16);
+  --header-bg: rgba(15, 20, 25, 0.6);
+  --shadow: rgba(0, 0, 0, 0.45);
+
+  --primary: #5f9dcf;
+  --blue: #6aa7dd;
+  --secondary: #5fb492;
+  --accent: #d97347;
+  --amber: #d2a33c;
+
+  --wash-1: #1d2835;
+  --wash-2: #16212c;
+  --wash-3: #141a20;
+
+  --splash-a: #4d8fc7;
+  --splash-b: #d97347;
+  --splash-c: #d2a33c;
+  --bubble-a: #2f4c66;
+  --bubble-b: #5a3d30;
+  --bubble-c: #5a4a28;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-space-grotesk);
+  --font-display: var(--font-fraunces);
+  --font-script: var(--font-caveat);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 * {
@@ -30,10 +82,15 @@ html {
   scroll-snap-align: center;
   overflow-x: hidden !important;
 }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(110% 90% at 88% -12%, var(--wash-1) 0%, rgba(255, 255, 255, 0) 52%),
+    radial-gradient(90% 70% at -12% 18%, var(--wash-2) 0%, rgba(255, 255, 255, 0) 48%),
+    radial-gradient(70% 60% at 50% 115%, var(--wash-3) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--bg);
+  color: var(--fg);
+  font-family: var(--font-space-grotesk);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +110,6 @@ body {
   flex: 1;
   justify-content: space-between;
 }
-
 
 @media (max-width: 780px) {
   .section-nav {

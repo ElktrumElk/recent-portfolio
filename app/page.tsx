@@ -3,6 +3,8 @@ import { Gap, Main, ScrollView } from "elk-components";
 import Hero from "./component/hero/page";
 import About from "./component/about/page";
 import Skill from "./component/skill/page";
+import Projects from "./component/projects/page";
+import Marquee from "./component/marquee/Marquee";
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                
               }}
               child={() => (
                 <>
@@ -27,10 +30,13 @@ export default function Home() {
                       alignItems: "center",
                       width: "100%",
                       height: "100%",
+                      position: 'relative'
                     }}
                   >
                     <Hero />
                   </section>
+
+                  <Marquee />
 
                   <section
                     id="about"
@@ -43,8 +49,8 @@ export default function Home() {
                   >
                     <About />
                   </section>
-                    
-                    <Gap height="10rem"/>
+
+                  <Gap height="10rem" />
                   <section
                     id="skills"
                     style={{
@@ -55,6 +61,20 @@ export default function Home() {
                     }}
                   >
                     <Skill />
+                  </section>
+
+                  <Gap height="10rem" />
+
+                  <section
+                    id="projects"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginBlockStart: "2rem",
+                    }}
+                  >
+                    <Projects />
                   </section>
                 </>
               )}

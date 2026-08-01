@@ -1,5 +1,5 @@
 "use client";
-import './hero.css'
+import "./hero.css";
 import {
   Animation,
   Badge,
@@ -8,64 +8,88 @@ import {
   Gap,
   Icon,
   Icons,
+  SectionDivider,
   Text,
 } from "elk-components";
+import BubbleBackground from "./BubbleBackground";
 
 const Hero = () => {
   return (
     <>
+      <SectionDivider variant="curl" color="var(--amber)" animate height={54} />
+
+      <BubbleBackground />
+
       <Container
+        className="cnt"
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           width: "100%",
           height: "100%",
-          maxWidth: "800px",
+          maxWidth: "820px",
           alignSelf: "center",
           justifyContent: "center",
         }}
-
         child={() => (
           <>
             <Animation
               initial={{ transform: "translateY(-30%)", opacity: "0" }}
               animate={{ transform: "translateY(0)", opacity: "1" }}
               exit={{ transform: "translateY(-30%)", opacity: "0" }}
-                
               duration={200}
               child={() => (
                 <Badge
                   style={{
-                    padding: ".4rem",
-                    borderWidth: ".5px",
+                    padding: ".4rem .9rem",
+                    borderWidth: "1px",
                     borderStyle: "solid",
+                    borderRadius: "9999px",
                   }}
-                  color="#00e6fb"
-                  backgroundColor="#6dfbd726"
-                  borderColor="#6dfbd74f"
-                  child={() => <Text text="Available for Work" type="p" />}
+                  color="var(--fg)"
+                  backgroundColor="var(--card)"
+                  borderColor="var(--accent)"
+                  child={() => (
+                    <Text
+                      text="Available for Work"
+                      type="p"
+                      style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 500 }}
+                    />
+                  )}
                 />
               )}
             />
+
             <Animation
               initial={{ transform: "translateX(-40%)", opacity: "0" }}
               animate={{ transform: "translateX(0)", opacity: "1" }}
               exit={{ transform: "translateX(-40%)", opacity: "0" }}
               child={() => (
                 <Text
+                  text="Hello, world."
+                  type="h3"
+                  size="clamp(1.6rem, 2.4svw, 2.4rem)"
+                  className="hero-script"
+                />
+              )}
+            />
+
+            <Animation
+              initial={{ transform: "translateX(-40%)", opacity: "0" }}
+              animate={{ transform: "translateX(0)", opacity: "1" }}
+              exit={{ transform: "translateX(-40%)", opacity: "0" }}
+              delay={150}
+              child={() => (
+                <Text
                   text="Inovation, Multivation & Admiration"
                   type="h1"
-                  size="clamp(2rem, 3svw, 4rem)"
+                  size="clamp(2.2rem, 4svw, 4rem)"
+                  className="hero-title"
                   style={{
                     textAlign: "center",
-                    fontFamily: "sans-serif",
-                    fontWeight: "bold",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    color: "transparent",
-                    backgroundImage:
-                      "linear-gradient(90deg, #fff 10%, #6dfbd7, #2fb6ff, #fff)",
+                    fontWeight: 900,
+                    letterSpacing: "-0.02em",
                   }}
                 />
               )}
@@ -75,43 +99,46 @@ const Hero = () => {
               initial={{ transform: "translateX(40%)", opacity: "0" }}
               animate={{ transform: "translateX(0)", opacity: "1" }}
               exit={{ transform: "translateX(40%)", opacity: "0" }}
+              delay={250}
               child={() => (
                 <Text
                   text="UI & Software Developer"
                   type="p"
-                  size="clamp(1rem, 1svw, 3rem)"
+                  size="clamp(1rem, 1.4svw, 1.6rem)"
                   style={{
                     textAlign: "center",
-                    fontFamily: "sans-serif",
-                    fontWeight: "bold",
-                    color: "grey",
+                    fontFamily: "var(--font-space-grotesk)",
+                    fontWeight: 500,
+                    color: "var(--muted)",
                   }}
                 />
               )}
             />
 
-            <Gap height="1rem" />
+            <Gap height="1.2rem" />
 
             <Animation
-              className='anim'
+              className="anim"
               initial={{ transform: "translateY(40%)", opacity: "0" }}
               animate={{ transform: "translateY(0)", opacity: "1" }}
               exit={{ transform: "translateY(40%)", opacity: "0" }}
-              
+              delay={350}
               child={() => (
                 <div style={{ display: "flex" }} className="hero-btn-cnt">
-                
-
                   <Button
-
                     style={{
                       display: "flex",
                       alignItems: "center",
                       gap: ".4rem",
-                      background: "linear-gradient(90deg, #6dfbd7, #2fb6ff)",
-                      borderRadius: "1rem",
-                      padding: ".5rem 1rem",
-                      color: "rgba(3, 25, 32, 0.98)",
+                      background:
+                        "linear-gradient(90deg, var(--accent), var(--amber))",
+                      borderRadius: "9999px",
+                      padding: ".6rem 1.3rem",
+                      color: "#fffdf6",
+                      boxShadow: "0 8px 20px var(--shadow)",
+                      fontFamily: "var(--font-space-grotesk)",
+                      fontWeight: 700,
+                      border: "none",
                     }}
                     child={() => (
                       <>
@@ -127,11 +154,13 @@ const Hero = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: ".4rem",
-                      background: "none",
-                      borderRadius: "1rem",
-                      padding: ".5rem 1rem",
-                      color: "rgba(201, 242, 255, 0.98)",
-                      border: "1px solid #2fb6ff",
+                      background: "var(--card)",
+                      borderRadius: "9999px",
+                      padding: ".6rem 1.3rem",
+                      color: "var(--primary)",
+                      border: "2px solid var(--primary)",
+                      fontFamily: "var(--font-space-grotesk)",
+                      fontWeight: 700,
                     }}
                     child={() => (
                       <>
