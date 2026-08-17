@@ -20,6 +20,7 @@ import {
   CloudIcon,
   TerminalIcon,
   ClockIcon,
+  NewspaperIcon,
 } from "../../lib/BrandIcons";
 import "./project.css";
 
@@ -30,6 +31,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; color?: strin
   CloudUpload: CloudIcon,
   Terminal: TerminalIcon,
   Clock: ClockIcon,
+  Newspaper: NewspaperIcon,
 };
 
 const filters: { key: ProjectCategory | "all"; label: string }[] = [
@@ -69,7 +71,7 @@ const Projects = () => {
             type="h2"
             text="Projects"
             color="var(--fg)"
-            size="2.5rem"
+            size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
               fontFamily: "var(--font-fraunces)",
@@ -81,7 +83,7 @@ const Projects = () => {
             type="p"
             text="Explore my work across different domains"
             color="var(--muted)"
-            size="1rem"
+            size="1.15rem"
             style={{
               fontFamily: "var(--font-space-grotesk)",
               marginBottom: "1.5rem",
@@ -131,7 +133,7 @@ const Projects = () => {
                             style={{
                               fontWeight: 700,
                               fontFamily: "var(--font-fraunces)",
-                              fontSize: "1.15rem",
+                              fontSize: "1.3rem",
                             }}
                           />
                           <span
@@ -174,10 +176,10 @@ const Projects = () => {
                         type="p"
                         text={project.description}
                         color="var(--muted)"
-                        size="0.9rem"
+                        size="1.05rem"
                         style={{
                           fontFamily: "var(--font-space-grotesk)",
-                          lineHeight: "1.6",
+                          lineHeight: "1.7",
                           marginBottom: "1rem",
                         }}
                       />

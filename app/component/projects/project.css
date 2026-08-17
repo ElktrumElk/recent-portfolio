@@ -7,14 +7,14 @@
 }
 
 .filter-btn {
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 9999px;
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--muted);
     font-family: var(--font-space-grotesk);
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.25s ease;
 }
@@ -41,7 +41,7 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    padding: 1.25rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     transition: all 0.35s ease;
@@ -63,9 +63,9 @@
 }
 
 .project-card__icon-wrap {
-    width: 40px;
-    height: 40px;
-    border-radius: 0.6rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 0.7rem;
     background: var(--bg-soft);
     display: flex;
     align-items: center;
@@ -81,7 +81,7 @@
 }
 
 .project-card__category {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     font-family: var(--font-space-grotesk);
     text-transform: uppercase;
@@ -92,8 +92,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 9999px;
     border: 1px solid var(--border);
     background: var(--bg);
@@ -112,10 +112,10 @@
 .project-card__gradient-preview {
     position: relative;
     width: 100%;
-    height: 8rem;
+    height: 9rem;
     border-radius: 0.75rem;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .project-card__gradient-bg {
@@ -139,11 +139,11 @@
 }
 
 .feature-chip {
-    padding: 0.2rem 0.6rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 9999px;
     background: var(--bg-soft);
     color: var(--fg);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 500;
     font-family: var(--font-space-grotesk);
 }
@@ -156,11 +156,11 @@
 }
 
 .tech-tag {
-    padding: 0.2rem 0.6rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 9999px;
     border: 1px solid var(--border);
     color: var(--muted);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 500;
     font-family: var(--font-space-grotesk);
 }
@@ -175,17 +175,17 @@
 }
 
 .project-card__date {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: var(--muted);
     font-family: var(--font-space-grotesk);
 }
 
 .project-card__status {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.2rem 0.6rem;
+    padding: 0.25rem 0.7rem;
     border-radius: 9999px;
     font-family: var(--font-space-grotesk);
 }

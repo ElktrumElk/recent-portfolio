@@ -46,7 +46,7 @@ const Skill = () => {
             type="h2"
             text="Skills & Expertise"
             color="var(--fg)"
-            size="2.5rem"
+            size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
               fontFamily: "var(--font-fraunces)",
@@ -58,7 +58,7 @@ const Skill = () => {
             type="p"
             text="Technologies and tools I work with on a daily basis"
             color="var(--muted)"
-            size="1rem"
+            size="1.15rem"
             style={{
               fontFamily: "var(--font-space-grotesk)",
               marginBottom: "2rem",
@@ -89,34 +89,34 @@ const Skill = () => {
                           flexDirection: "column",
                           alignItems: "center",
                           width: "auto",
-                          padding: "1.5rem 1rem",
+                          padding: "1.75rem 1.25rem",
                         }}
                         body={() => (
                           <>
                             <Icon
                               icon={skill.icon}
                               color={skill.color}
-                              size={30}
+                              size={36}
                             />
-                            <Gap height="0.75rem" />
+                            <Gap height="0.85rem" />
                             <Text
                               type="p"
                               text={skill.name}
                               color="var(--fg)"
-                              size="1rem"
+                              size="1.1rem"
                               style={{
                                 fontWeight: 600,
                                 textAlign: "center",
                                 fontFamily: "var(--font-space-grotesk)",
                               }}
                             />
-                            <Gap height="0.75rem" />
+                            <Gap height="0.85rem" />
                             <div
                               style={{
                                 width: "100%",
-                                height: "8px",
+                                height: "10px",
                                 background: "var(--bg-soft)",
-                                borderRadius: "4px",
+                                borderRadius: "5px",
                                 overflow: "hidden",
                               }}
                             >
@@ -125,17 +125,17 @@ const Skill = () => {
                                   width: `${skill.level}%`,
                                   height: "100%",
                                   background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`,
-                                  borderRadius: "4px",
+                                  borderRadius: "5px",
                                   transition: "width 1s ease",
                                 }}
                               />
                             </div>
-                            <Gap height="0.5rem" />
+                            <Gap height="0.6rem" />
                             <Text
                               type="p"
                               text={`${skill.level}%`}
                               color={skill.color}
-                              size="0.875rem"
+                              size="1rem"
                               style={{
                                 fontWeight: 600,
                                 fontFamily: "var(--font-space-grotesk)",

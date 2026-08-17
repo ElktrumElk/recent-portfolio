@@ -44,7 +44,7 @@ const HeaderComponet = (): React.ReactNode => {
               color: "var(--fg)",
               fontFamily: "var(--font-fraunces)",
               fontWeight: 700,
-              fontSize: "1.3rem",
+              fontSize: "1.45rem",
             }}
           />
         )}
@@ -62,7 +62,7 @@ const HeaderComponet = (): React.ReactNode => {
                           key={link.href}
                           className="nav-pill"
                           style={{
-                            padding: ".2rem 1rem",
+                            padding: ".3rem 1.15rem",
                             borderRadius: "1rem",
                           }}
                           child={() => (
@@ -125,7 +125,7 @@ const HeaderComponet = (): React.ReactNode => {
             >
               <Icon
                 icon={open ? Icons.icon.Close : Icons.icon.HambuggerMenu}
-                size={20}
+                size={22}
                 color="currentColor"
               />
             </button>

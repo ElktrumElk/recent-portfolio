@@ -70,7 +70,7 @@ const Hero = () => {
                 <Text
                   text="Hello, world."
                   type="h3"
-                  size="clamp(1.6rem, 2.4svw, 2.4rem)"
+                  size="clamp(1.8rem, 2.8svw, 2.8rem)"
                   className="hero-script"
                 />
               )}
@@ -85,7 +85,7 @@ const Hero = () => {
                 <Text
                   text="Innovation, Motivation & Admiration"
                   type="h1"
-                  size="clamp(2.2rem, 4svw, 4rem)"
+                  size="clamp(2.6rem, 5svw, 4.8rem)"
                   className="hero-title"
                   style={{
                     textAlign: "center",
@@ -105,7 +105,7 @@ const Hero = () => {
                 <Text
                   text="UI & Software Developer"
                   type="p"
-                  size="clamp(1rem, 1.4svw, 1.6rem)"
+                  size="clamp(1.15rem, 1.6svw, 1.8rem)"
                   style={{
                     textAlign: "center",
                     fontFamily: "var(--font-space-grotesk)",
@@ -130,15 +130,16 @@ const Hero = () => {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: ".4rem",
+                      gap: ".5rem",
                       background:
                         "linear-gradient(90deg, var(--accent), var(--amber))",
                       borderRadius: "9999px",
-                      padding: ".6rem 1.3rem",
+                      padding: ".75rem 1.7rem",
                       color: "#fffdf6",
                       boxShadow: "0 8px 20px var(--shadow)",
                       fontFamily: "var(--font-space-grotesk)",
                       fontWeight: 700,
+                      fontSize: "1.05rem",
                       border: "none",
                     }}
                     child={() => (
@@ -154,19 +155,20 @@ const Hero = () => {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: ".4rem",
+                      gap: ".5rem",
                       background: "var(--card)",
                       borderRadius: "9999px",
-                      padding: ".6rem 1.3rem",
+                      padding: ".75rem 1.7rem",
                       color: "var(--primary)",
                       border: "2px solid var(--primary)",
                       fontFamily: "var(--font-space-grotesk)",
                       fontWeight: 700,
+                      fontSize: "1.05rem",
                     }}
                     child={() => (
                       <>
                         <strong>Contact</strong>
-                        <Icon icon={Icons.icon.Contact} size={20} />
+                        <Icon icon={Icons.icon.Contact} size={22} />
                       </>
                     )}
                   />
@@ -175,20 +177,20 @@ const Hero = () => {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: ".4rem",
+                      gap: ".5rem",
                       background: "transparent",
                       borderRadius: "9999px",
-                      padding: ".6rem 1.3rem",
+                      padding: ".75rem 1.7rem",
                       color: "var(--muted)",
                       border: "1px solid var(--border)",
                       fontFamily: "var(--font-space-grotesk)",
                       fontWeight: 600,
-                      fontSize: "0.9rem",
+                      fontSize: "1.05rem",
                     }}
                     child={() => (
                       <>
                         <strong>Resume</strong>
-                        <DownloadIcon size={18} color="currentColor" />
+                        <DownloadIcon size={20} color="currentColor" />
                       </>
                     )}
                   />

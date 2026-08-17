@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     company: "Self-Employed",
     companyUrl: "",
     location: "Remote",
-    startDate: "2022-01",
+    startDate: "2025-01",
     endDate: null,
     description:
       "Building web and mobile applications for clients across various industries, specializing in React, Next.js, and Flutter development.",
@@ -28,17 +28,17 @@ export const experiences: Experience[] = [
       "Specialized in accessible, performant user interfaces",
       "Full-stack development from concept to deployment",
     ],
-    techStack: ["React", "Next.js", "Flutter", "TypeScript", "Node.js"],
+    techStack: ["React", "Next.js", "Flutter", "TypeScript", "Node.js", "Python", "Go"],
   },
 ];
 
 export const education = [
   {
     id: "self-taught",
-    institution: "Self-Directed Learning",
+    institution: "College Of Digital Excellence (CODE)",
     degree: "Software Engineering",
     field: "Computer Science & Web Development",
-    startDate: "2021",
+    startDate: "2023",
     endDate: "Present",
     description:
       "Continuous learning through online courses, documentation, open-source contributions, and hands-on project building.",

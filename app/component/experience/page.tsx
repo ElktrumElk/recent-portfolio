@@ -26,7 +26,7 @@ const Experience = () => {
             type="h2"
             text="Experience"
             color="var(--fg)"
-            size="2.5rem"
+            size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
               fontFamily: "var(--font-fraunces)",
@@ -38,7 +38,7 @@ const Experience = () => {
             type="p"
             text="My professional journey and education"
             color="var(--muted)"
-            size="1rem"
+            size="1.15rem"
             style={{
               fontFamily: "var(--font-space-grotesk)",
               marginBottom: "3rem",
@@ -63,7 +63,7 @@ const Experience = () => {
                           type="h3"
                           text={exp.role}
                           color="var(--fg)"
-                          size="1.25rem"
+                          size="1.4rem"
                           style={{
                             fontWeight: 700,
                             fontFamily: "var(--font-fraunces)",
@@ -77,7 +77,7 @@ const Experience = () => {
                         type="p"
                         text={`${exp.company} · ${exp.location}`}
                         color="var(--primary)"
-                        size="0.95rem"
+                        size="1.05rem"
                         style={{
                           fontWeight: 600,
                           fontFamily: "var(--font-space-grotesk)",
@@ -88,10 +88,10 @@ const Experience = () => {
                         type="p"
                         text={exp.description}
                         color="var(--muted)"
-                        size="0.95rem"
+                        size="1.05rem"
                         style={{
                           fontFamily: "var(--font-space-grotesk)",
-                          lineHeight: "1.7",
+                          lineHeight: "1.8",
                           marginBottom: "1rem",
                         }}
                       />
@@ -120,7 +120,7 @@ const Experience = () => {
             type="h3"
             text="Education"
             color="var(--fg)"
-            size="1.5rem"
+            size="1.7rem"
             style={{
               fontWeight: 700,
               fontFamily: "var(--font-fraunces)",
@@ -141,7 +141,7 @@ const Experience = () => {
                       type="h4"
                       text={edu.degree}
                       color="var(--fg)"
-                      size="1.1rem"
+                      size="1.2rem"
                       style={{
                         fontWeight: 700,
                         fontFamily: "var(--font-space-grotesk)",
@@ -155,7 +155,7 @@ const Experience = () => {
                     type="p"
                     text={edu.institution}
                     color="var(--primary)"
-                    size="0.95rem"
+                    size="1.05rem"
                     style={{
                       fontWeight: 600,
                       fontFamily: "var(--font-space-grotesk)",
@@ -166,10 +166,10 @@ const Experience = () => {
                     type="p"
                     text={edu.description}
                     color="var(--muted)"
-                    size="0.9rem"
+                    size="1rem"
                     style={{
                       fontFamily: "var(--font-space-grotesk)",
-                      lineHeight: "1.6",
+                      lineHeight: "1.7",
                     }}
                   />
                 </div>

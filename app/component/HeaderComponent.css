@@ -30,8 +30,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 9999px;
     border: 1px solid var(--border);
     background: var(--card);
@@ -72,11 +72,12 @@
 .mobile-menu a {
     display: flex;
     align-items: center;
-    padding: 0.7rem 1rem;
+    padding: 0.85rem 1.15rem;
     border-radius: 0.8rem;
     color: var(--fg);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.05rem;
     font-family: var(--font-space-grotesk);
     transition: background 0.2s ease;
 }
@@ -95,7 +96,7 @@
 
 .mobile-menu__social a {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 780px) {

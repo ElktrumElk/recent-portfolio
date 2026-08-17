@@ -31,35 +31,35 @@
   --bubble-c: #ecdcb4;
 }
 
-/* ---------- Dark theme (masculine) ---------- */
+/* ---------- Dark theme (professional slate) ---------- */
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #0f1419;
-  --bg-soft: #1a222b;
-  --fg: #e6eaee;
-  --muted: #9aa7b2;
-  --card: #1a222b;
-  --border: rgba(230, 234, 238, 0.16);
-  --header-bg: rgba(15, 20, 25, 0.6);
-  --shadow: rgba(0, 0, 0, 0.45);
+  --bg: #111318;
+  --bg-soft: #1a1d24;
+  --fg: #e2e4e8;
+  --muted: #8b919a;
+  --card: #181b22;
+  --border: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(17, 19, 24, 0.75);
+  --shadow: rgba(0, 0, 0, 0.5);
 
-  --primary: #5f9dcf;
-  --blue: #6aa7dd;
-  --secondary: #5fb492;
-  --accent: #d97347;
-  --amber: #d2a33c;
+  --primary: #6ba3d6;
+  --blue: #7bb3e0;
+  --secondary: #6bc4a0;
+  --accent: #e07850;
+  --amber: #dbb04a;
 
-  --wash-1: #1d2835;
-  --wash-2: #16212c;
-  --wash-3: #141a20;
+  --wash-1: #1a2030;
+  --wash-2: #151c28;
+  --wash-3: #131820;
 
-  --splash-a: #4d8fc7;
-  --splash-b: #d97347;
-  --splash-c: #d2a33c;
-  --bubble-a: #2f4c66;
-  --bubble-b: #5a3d30;
-  --bubble-c: #5a4a28;
+  --splash-a: #4a8cc4;
+  --splash-b: #d06a3e;
+  --splash-c: #c8a03a;
+  --bubble-a: #2a4860;
+  --bubble-b: #553828;
+  --bubble-c: #504520;
 }
 
 @theme inline {
@@ -91,6 +91,7 @@ body {
     var(--bg);
   color: var(--fg);
   font-family: var(--font-space-grotesk);
+  font-size: 17px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,8 +171,8 @@ body {
 .timeline-content {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
+  border-radius: 0.85rem;
+  padding: 1.5rem;
 }
 
 .timeline-header {
@@ -184,7 +185,7 @@ body {
 }
 
 .timeline-date {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--muted);
   font-family: var(--font-space-grotesk);
   font-weight: 500;
@@ -200,11 +201,11 @@ body {
 .timeline-highlights li {
   position: relative;
   padding-left: 1.2rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
   color: var(--muted);
   font-family: var(--font-space-grotesk);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .timeline-highlights li::before {
@@ -227,8 +228,8 @@ body {
 .edu-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
+  border-radius: 0.85rem;
+  padding: 1.5rem;
   width: 100%;
   max-width: 720px;
 }
@@ -245,11 +246,11 @@ body {
 .contact-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: 1.1rem;
+  padding: 1.15rem 1.4rem;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 0.75rem;
+  border-radius: 0.85rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -261,9 +262,9 @@ body {
 }
 
 .contact-card__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 0.6rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 0.7rem;
   background: var(--bg-soft);
   display: flex;
   align-items: center;
@@ -316,7 +317,7 @@ body {
   text-decoration: none;
   font-family: var(--font-space-grotesk);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   transition: color 0.2s ease;
 }
 
@@ -348,8 +349,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 9999px;
   border: 1px solid var(--border);
   color: var(--muted);
@@ -366,8 +367,8 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 9999px;
   border: 1px solid var(--border);
   background: var(--card);

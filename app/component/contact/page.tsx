@@ -50,7 +50,7 @@ const Contact = () => {
             type="h2"
             text="Let's Work Together"
             color="var(--fg)"
-            size="2.5rem"
+            size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
               fontFamily: "var(--font-fraunces)",
@@ -63,7 +63,7 @@ const Contact = () => {
             type="p"
             text="Have a project in mind? I'd love to hear about it."
             color="var(--muted)"
-            size="1rem"
+            size="1.15rem"
             style={{
               fontFamily: "var(--font-space-grotesk)",
               marginBottom: "3rem",
@@ -90,14 +90,14 @@ const Contact = () => {
                     className="contact-card"
                   >
                     <div className="contact-card__icon">
-                      <Icon icon={link.icon} color="var(--accent)" size={24} />
+                      <Icon icon={link.icon} color="var(--accent)" size={26} />
                     </div>
                     <div className="contact-card__info">
                       <Text
                         type="p"
                         text={link.label}
                         color="var(--fg)"
-                        size="1rem"
+                        size="1.1rem"
                         style={{
                           fontWeight: 700,
                           fontFamily: "var(--font-space-grotesk)",
@@ -107,7 +107,7 @@ const Contact = () => {
                         type="p"
                         text={link.value.replace("https://", "")}
                         color="var(--muted)"
-                        size="0.85rem"
+                        size="1rem"
                         style={{
                           fontFamily: "var(--font-space-grotesk)",
                         }}
@@ -116,7 +116,7 @@ const Contact = () => {
                     <Icon
                       icon={Icons.icon.ArrowUpRight}
                       color="var(--muted)"
-                      size={18}
+                      size={20}
                     />
                   </a>
                 )}
@@ -139,13 +139,13 @@ const Contact = () => {
                     background:
                       "linear-gradient(90deg, var(--accent), var(--amber))",
                     borderRadius: "9999px",
-                    padding: ".75rem 2rem",
+                    padding: ".85rem 2.2rem",
                     color: "#fffdf6",
                     boxShadow: "0 8px 20px var(--shadow)",
                     fontFamily: "var(--font-space-grotesk)",
                     fontWeight: 700,
                     border: "none",
-                    fontSize: "1rem",
+                    fontSize: "1.1rem",
                     cursor: "pointer",
                   }}
                   child={() => (

@@ -44,7 +44,7 @@ const Footer = () => {
                   style={{
                     fontFamily: "var(--font-fraunces)",
                     fontWeight: 700,
-                    fontSize: "1.2rem",
+                    fontSize: "1.35rem",
                   }}
                 />
               </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                 type="p"
                 text={`© ${year} ${siteConfig.name}. All rights reserved.`}
                 color="var(--muted)"
-                size="0.85rem"
+                size="1rem"
                 style={{
                   fontFamily: "var(--font-space-grotesk)",
                 }}

@@ -40,6 +40,54 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "newsroom",
+    name: "Newsroom",
+    slug: "newsroom",
+    color: "#b91c1c",
+    description:
+      "A news application built for the Sierra Leone Broadcasting Corporation (SLBC) delivering reliable and updated news to users across mobile and web platforms.",
+    longDescription:
+      "Newsroom is the official digital news platform for SLBC, providing citizens with timely, accurate, and accessible news coverage. It features real-time news updates, categorized content, push notifications, and a seamless reading experience across both mobile and web.",
+    category: "fullstack",
+    status: "active",
+    techStack: ["RSC", "Next.js", "elk-components", "TypeScript", "Python", "Flutter"],
+    features: [
+      "Real-time news updates",
+      "Push notifications",
+      "Category-based browsing",
+      "Mobile & web versions",
+      "Offline reading support",
+    ],
+    repoLink: "https://github.com/ElktrumElk/slbc-mobile",
+    liveLink: "",
+    dateStarted: "2026-08",
+    dateEnded: null,
+    icon: "Newspaper",
+    seo: {
+      title: "Newsroom — SLBC News Application",
+      description:
+        "A news application built for the Sierra Leone Broadcasting Corporation (SLBC) delivering reliable and updated news on mobile and web. Built with React, React Native, and Node.js.",
+      keywords: [
+        "Newsroom",
+        "SLBC",
+        "Sierra Leone news",
+        "news app",
+        "broadcasting app",
+        "React Native news",
+        "real-time news",
+        "mobile news",
+        "SLBC mobile",
+        "news platform",
+      ],
+      openGraph: {
+        title: "Newsroom — SLBC News Application",
+        description:
+          "Reliable and updated news for Sierra Leone, delivered via mobile and web.",
+        type: "website",
+      },
+    },
+  },
+  {
     id: "merchant-core",
     name: "Merchant Core",
     slug: "merchant-core",

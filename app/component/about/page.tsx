@@ -60,7 +60,7 @@ const About = () => {
                   type="h1"
                   text="Elkanah Cole"
                   color="var(--fg)"
-                  size="3rem"
+                  size="clamp(2.5rem, 4.5vw, 3.5rem)"
                   style={{
                     fontWeight: 900,
                     fontFamily: "var(--font-fraunces)",
@@ -81,11 +81,11 @@ const About = () => {
                  far one needs a team with high levels of effort.'`}
 
                   color="var(--muted)"
-                  size="1rem"
+                  size="1.15rem"
                   style={{
                     fontWeight: "normal",
                     fontFamily: "var(--font-space-grotesk)",
-                    lineHeight: "1.7",
+                    lineHeight: "1.8",
                   }}
                 />
               )}
@@ -103,11 +103,11 @@ const About = () => {
                 but also in communication and environmental interaction.`}
 
                   color="var(--muted)"
-                  size="1rem"
+                  size="1.15rem"
                   style={{
                     fontWeight: "normal",
                     fontFamily: "var(--font-space-grotesk)",
-                    lineHeight: "1.7",
+                    lineHeight: "1.8",
                   }}
                 />
               )}
@@ -141,7 +141,7 @@ const About = () => {
                           <Text
                             type="p"
                             text={data.description}
-                            size="1.4rem"
+                            size="1.6rem"
                             color="var(--fg)"
                             style={{
                               fontWeight: 700,
@@ -153,6 +153,7 @@ const About = () => {
                             type="p"
                             text={data.type}
                             color="var(--muted)"
+                            size="1rem"
                             style={{
                               fontFamily: "var(--font-space-grotesk)",
                             }}
