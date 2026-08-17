@@ -12,7 +12,7 @@ import {
   Text,
 } from "elk-components";
 import BubbleBackground from "./BubbleBackground";
-import { DownloadIcon } from "../../lib/BrandIcons";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -151,49 +151,29 @@ const Hero = () => {
                   />
                   <Gap width="1rem" />
 
-                  <Button
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: ".5rem",
-                      background: "var(--card)",
-                      borderRadius: "9999px",
-                      padding: ".75rem 1.7rem",
-                      color: "var(--primary)",
-                      border: "2px solid var(--primary)",
-                      fontFamily: "var(--font-space-grotesk)",
-                      fontWeight: 700,
-                      fontSize: "1.05rem",
-                    }}
-                    child={() => (
-                      <>
-                        <strong>Contact</strong>
-                        <Icon icon={Icons.icon.Contact} size={22} />
-                      </>
-                    )}
-                  />
-                  <Gap width="1rem" />
-                  <Button
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: ".5rem",
-                      background: "transparent",
-                      borderRadius: "9999px",
-                      padding: ".75rem 1.7rem",
-                      color: "var(--muted)",
-                      border: "1px solid var(--border)",
-                      fontFamily: "var(--font-space-grotesk)",
-                      fontWeight: 600,
-                      fontSize: "1.05rem",
-                    }}
-                    child={() => (
-                      <>
-                        <strong>Resume</strong>
-                        <DownloadIcon size={20} color="currentColor" />
-                      </>
-                    )}
-                  />
+                  <Link href="#contact" style={{ textDecoration: "none" }}>
+                    <Button
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: ".5rem",
+                        background: "var(--card)",
+                        borderRadius: "9999px",
+                        padding: ".75rem 1.7rem",
+                        color: "var(--primary)",
+                        border: "2px solid var(--primary)",
+                        fontFamily: "var(--font-space-grotesk)",
+                        fontWeight: 700,
+                        fontSize: "1.05rem",
+                      }}
+                      child={() => (
+                        <>
+                          <strong>Contact</strong>
+                          <Icon icon={Icons.icon.Contact} size={22} />
+                        </>
+                      )}
+                    />
+                  </Link>
                 </div>
               )}
             />
