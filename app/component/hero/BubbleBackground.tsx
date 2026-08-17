@@ -59,23 +59,23 @@ const BubbleBackground = () => {
         </g>
 
         <g className="hero-splash__bubbles">
-          <circle className="bubble" cx="180" cy="640" r="92" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="2" />
-          <circle className="bubble" cx="322" cy="508" r="42" fill="url(#bubbleCoral)" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1.5" />
-          <circle className="bubble" cx="120" cy="410" r="26" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1.5" />
-          <circle className="bubble" cx="545" cy="292" r="62" fill="url(#bubbleCoral)" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1.5" />
-          <circle className="bubble" cx="625" cy="404" r="24" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1" />
-          <circle className="bubble" cx="762" cy="204" r="38" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1.5" />
-          <circle className="bubble" cx="905" cy="500" r="82" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="2" />
-          <circle className="bubble" cx="1005" cy="326" r="22" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
-          <circle className="bubble" cx="1102" cy="562" r="50" fill="url(#bubbleCoral)" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1.5" />
-          <circle className="bubble" cx="1240" cy="196" r="30" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1.5" />
-          <circle className="bubble" cx="1332" cy="356" r="18" fill="url(#bubbleCoral)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
-          <circle className="bubble" cx="858" cy="682" r="34" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1.5" />
-          <circle className="bubble" cx="1086" cy="118" r="52" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1.5" />
-          <circle className="bubble" cx="700" cy="120" r="20" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
-          <circle className="bubble" cx="420" cy="170" r="30" fill="url(#bubbleCoral)" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1.5" />
-          <circle className="bubble" cx="230" cy="240" r="14" fill="url(#bubbleSunny)" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
-          <circle className="bubble" cx="1220" cy="760" r="60" fill="url(#bubbleTeal)" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1.5" />
+          <circle className="bubble" cx="180" cy="640" r="92" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="2" />
+          <circle className="bubble" cx="322" cy="508" r="42" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="120" cy="410" r="26" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="545" cy="292" r="62" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="625" cy="404" r="24" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
+          <circle className="bubble" cx="762" cy="204" r="38" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="905" cy="500" r="82" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="2" />
+          <circle className="bubble" cx="1005" cy="326" r="22" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
+          <circle className="bubble" cx="1102" cy="562" r="50" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="1240" cy="196" r="30" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="1332" cy="356" r="18" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
+          <circle className="bubble" cx="858" cy="682" r="34" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="1086" cy="118" r="52" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="700" cy="120" r="20" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
+          <circle className="bubble" cx="420" cy="170" r="30" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          <circle className="bubble" cx="230" cy="240" r="14" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
+          <circle className="bubble" cx="1220" cy="760" r="60" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
         </g>
       </svg>
     </div>

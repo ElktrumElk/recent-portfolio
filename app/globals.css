@@ -17,7 +17,7 @@
   --blue: #2f6f9f;
   --secondary: #2f6b53;
   --accent: #c0512f;
-  --amber: #c9992e;
+  --amber: #7a8b96;
 
   --wash-1: #e6d3a8;
   --wash-2: #ccdce7;
@@ -25,10 +25,11 @@
 
   --splash-a: #205a8a;
   --splash-b: #c0512f;
-  --splash-c: #c9992e;
+  --splash-c: #5a6a74;
   --bubble-a: #c3dced;
   --bubble-b: #eecfbe;
-  --bubble-c: #ecdcb4;
+  --bubble-c: #c8d0d6;
+  --bubble-stroke: rgba(255, 255, 255, 0.55);
 }
 
 /* ---------- Dark theme (professional slate) ---------- */
@@ -48,18 +49,19 @@
   --blue: #7bb3e0;
   --secondary: #6bc4a0;
   --accent: #e07850;
-  --amber: #dbb04a;
+  --amber: #8a9ca8;
 
   --wash-1: #1a2030;
   --wash-2: #151c28;
   --wash-3: #131820;
 
-  --splash-a: #4a8cc4;
-  --splash-b: #d06a3e;
-  --splash-c: #c8a03a;
-  --bubble-a: #2a4860;
-  --bubble-b: #553828;
-  --bubble-c: #504520;
+  --splash-a: #162d4a;
+  --splash-b: #2a1e1a;
+  --splash-c: #1c2430;
+  --bubble-a: #1a3a58;
+  --bubble-b: #2e2220;
+  --bubble-c: #1e2a38;
+  --bubble-stroke: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {

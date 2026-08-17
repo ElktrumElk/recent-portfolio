@@ -96,7 +96,7 @@
 .hero-title {
     font-family: var(--font-fraunces);
     color: var(--foreground);
-    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.6);
+    text-shadow: 0 2px 0 var(--border);
 }
 
 @media (max-width: 278px) {
