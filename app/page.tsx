@@ -4,7 +4,11 @@ import Hero from "./component/hero/page";
 import About from "./component/about/page";
 import Skill from "./component/skill/page";
 import Projects from "./component/projects/page";
+import Experience from "./component/experience/page";
+import Contact from "./component/contact/page";
+import Footer from "./component/footer/page";
 import Marquee from "./component/marquee/Marquee";
+import ScrollToTop from "./component/ScrollToTop";
 
 export default function Home() {
   return (
@@ -18,7 +22,6 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                
               }}
               child={() => (
                 <>
@@ -30,7 +33,7 @@ export default function Home() {
                       alignItems: "center",
                       width: "100%",
                       height: "100%",
-                      position: 'relative'
+                      position: "relative",
                     }}
                   >
                     <Hero />
@@ -50,7 +53,7 @@ export default function Home() {
                     <About />
                   </section>
 
-                  <Gap height="10rem" />
+                  <Gap height="6rem" />
                   <section
                     id="skills"
                     style={{
@@ -63,7 +66,21 @@ export default function Home() {
                     <Skill />
                   </section>
 
-                  <Gap height="10rem" />
+                  <Gap height="6rem" />
+
+                  <section
+                    id="experience"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginBlockStart: "2rem",
+                    }}
+                  >
+                    <Experience />
+                  </section>
+
+                  <Gap height="6rem" />
 
                   <section
                     id="projects"
@@ -76,12 +93,29 @@ export default function Home() {
                   >
                     <Projects />
                   </section>
+
+                  <Gap height="6rem" />
+
+                  <section
+                    id="contact"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginBlockStart: "2rem",
+                    }}
+                  >
+                    <Contact />
+                  </section>
+
+                  <Footer />
                 </>
               )}
             />
           </>
         )}
       />
+      <ScrollToTop />
     </>
   );
 }

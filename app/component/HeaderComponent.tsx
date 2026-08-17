@@ -18,9 +18,9 @@ import "./HeaderComponent.css";
 const links = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#stack", label: "Stack" },
-  { href: "#contacts", label: "Contacts" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const HeaderComponet = (): React.ReactNode => {

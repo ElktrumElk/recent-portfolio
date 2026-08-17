@@ -1,57 +1,56 @@
 "use client";
-import { Container, Text, Stack, Card, Gap, Icon, Icons, IconButton } from "elk-components";
+import { useState } from "react";
+import {
+  Animation,
+  Container,
+  Gap,
+  Icon,
+  Icons,
+  Text,
+} from "elk-components";
+import {
+  projects,
+  projectCategories,
+  type ProjectCategory,
+} from "../../lib/projects";
+import {
+  CreditCardIcon,
+  LayersIcon,
+  ShareIcon,
+  CloudIcon,
+  TerminalIcon,
+  ClockIcon,
+} from "../../lib/BrandIcons";
 import "./project.css";
 
-const projects = [
-  {
-    name: "Merchant Core",
-    color: "#205a8a",
-    des: "A Mobile application that help business people in managing there business",
-    repoLintk: "",
-    icon: Icons.icon.CreditCard,
-  },
-  {
-    name: "elk-components",
-    color: "#2f6f9f",
-    des: "A React component Library with 50+ ready made components and 205 built in svg icons",
-    repoLink: "",
-    icon: Icons.icon.Layers,
-  },
+const iconMap: Record<string, React.ComponentType<{ size?: number; color?: string }>> = {
+  CreditCard: CreditCardIcon,
+  Layers: LayersIcon,
+  ShareLogo: ShareIcon,
+  CloudUpload: CloudIcon,
+  Terminal: TerminalIcon,
+  Clock: ClockIcon,
+};
 
-  {
-    name: "Share",
-    color: "#2f6fd0",
-    des: "A Share file system platform where users share files with a secure link by client a sharing link to client b and can acces client a files that have been uploaded",
-    repoLink: "",
-    icon: Icons.icon.ShareLogo,
-  },
-
-  {
-    name: "Front Devs",
-    color: "#c9992e",
-    des: "A platform where developers can showcase there works and get connections with other developers or clients.",
-    repoLink: "",
-    icon: Icons.icon.CloudUpload,
-  },
-  {
-    name: "Interacter",
-    color: "#2f6b53",
-    des: "A lightweight library for node.js that accept user input in the cli",
-    repoLink: "",
-    icon: Icons.icon.Terminal,
-  },
-
-  {
-    name: "Reminder",
-
-    color: "#c0512f",
-    des: "A simple todo web application that reminds you of your task",
-    repoLink: "",
-    icon: Icons.icon.Clock,
-  },
+const filters: { key: ProjectCategory | "all"; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "web", label: "Web" },
+  { key: "mobile", label: "Mobile" },
+  { key: "library", label: "Libraries" },
+  { key: "fullstack", label: "Full Stack" },
+  { key: "cli", label: "CLI" },
 ];
 
 const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">(
+    "all"
+  );
+
+  const filtered =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
+
   return (
     <Container
       style={{
@@ -80,72 +79,144 @@ const Projects = () => {
           />
           <Text
             type="p"
-            text="Explore my Works"
+            text="Explore my work across different domains"
             color="var(--muted)"
             size="1rem"
             style={{
               fontFamily: "var(--font-space-grotesk)",
-              marginBottom: "2rem",
+              marginBottom: "1.5rem",
             }}
           />
 
-          <Stack
-            className="stack"
-            gap="1rem"
-            style={{ flexWrap: "wrap", justifyContent: "center" }}
-            child={() => (
-              <>
-                {projects.map((data, key) => (
-                  <Card
-                    className="cards"
-                    shadow
-                    shadowColor="var(--shadow)"
-                    backgroundColor="var(--card)"
-                    borderColor="var(--border)"
-                    key={key}
-                    headerStyle={{ padding: "0" }}
-                    header={() => (
-                      <>
-                        <div className="card-header">
-                          <Icon icon={data.icon} color={data.color} />
-                          <Gap width="1rem" />
+          <div className="project-filters">
+            {filters.map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                className={`filter-btn ${activeFilter === f.key ? "filter-btn--active" : ""}`}
+                onClick={() => setActiveFilter(f.key)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          <Gap height="1.5rem" />
+
+          <div className="project-grid">
+            {filtered.map((project, idx) => {
+              const IconComp = iconMap[project.icon] || Icons.icon.Layers;
+              const catInfo = projectCategories[project.category];
+
+              return (
+                <Animation
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  delay={idx * 80}
+                  child={() => (
+                    <article
+                      className="project-card"
+                      style={{ "--accent-hl": project.color } as React.CSSProperties}
+                    >
+                      <div className="project-card__header">
+                        <div className="project-card__icon-wrap">
+                          <IconComp size={22} color={project.color} />
+                        </div>
+                        <div className="project-card__title-area">
                           <Text
                             type="h3"
-                            text={data.name}
+                            text={project.name}
                             color="var(--fg)"
                             style={{
                               fontWeight: 700,
                               fontFamily: "var(--font-fraunces)",
+                              fontSize: "1.15rem",
                             }}
                           />
-
-                          <IconButton
-                            icon={Icons.icon.ArrowUpRight}
-                            className="prev-icon"
-                          />
+                          <span
+                            className="project-card__category"
+                            style={{ color: catInfo.color }}
+                          >
+                            {catInfo.label}
+                          </span>
                         </div>
-                      </>
-                    )}
-                    body={() => (
-                      <>
-                        <div className="img"></div>
-                        <Gap height="1rem" />
-                        <Text
-                          type="p"
-                          text={data.des}
-                          color="var(--muted)"
+                        {project.repoLink && (
+                          <a
+                            href={project.repoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-card__link"
+                            aria-label={`View ${project.name} source code`}
+                          >
+                            <Icon
+                              icon={Icons.icon.ArrowUpRight}
+                              color="var(--muted)"
+                              size={18}
+                            />
+                          </a>
+                        )}
+                      </div>
+
+                      <div className="project-card__gradient-preview">
+                        <div
+                          className="project-card__gradient-bg"
                           style={{
-                            fontFamily: "var(--font-space-grotesk)",
-                            lineHeight: "1.6",
+                            background: `linear-gradient(135deg, ${project.color}22, ${project.color}08)`,
                           }}
                         />
-                      </>
-                    )}
-                  />
-                ))}
-              </>
-            )}
-          />
+                        <div className="project-card__gradient-icon">
+                          <IconComp size={40} color={`${project.color}44`} />
+                        </div>
+                      </div>
+
+                      <Text
+                        type="p"
+                        text={project.description}
+                        color="var(--muted)"
+                        size="0.9rem"
+                        style={{
+                          fontFamily: "var(--font-space-grotesk)",
+                          lineHeight: "1.6",
+                          marginBottom: "1rem",
+                        }}
+                      />
+
+                      <div className="project-card__features">
+                        {project.features.slice(0, 3).map((feat) => (
+                          <span key={feat} className="feature-chip">
+                            {feat}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-card__tech">
+                        {project.techStack.map((tech) => (
+                          <span key={tech} className="tech-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-card__footer">
+                        <span className="project-card__date">
+                          {project.dateStarted}
+                          {project.dateEnded
+                            ? ` — ${project.dateEnded}`
+                            : " — Present"}
+                        </span>
+                        <span
+                          className={`project-card__status project-card__status--${project.status}`}
+                        >
+                          {project.status}
+                        </span>
+                      </div>
+                    </article>
+                  )}
+                />
+              );
+            })}
+          </div>
         </>
       )}
     />

@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Caveat, Fraunces, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import HeaderComponet from "./component/HeaderComponent";
+import { siteConfig } from "./lib/site";
+import { JsonLd } from "./lib/json-ld";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -27,9 +29,56 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elkanah Cole — UI & Software Developer",
-  description:
-    "Portfolio of Elkanah Cole, a fullstack developer crafting sophisticated, accessible interfaces.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name, url: siteConfig.github }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  applicationName: siteConfig.title,
+  category: "portfolio",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    siteName: siteConfig.title,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.handle,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ece7de" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1419" },
+  ],
 };
 
 const themeInitScript = `(function () {
@@ -57,6 +106,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
+        <JsonLd />
         <HeaderComponet />
         {children}
       </body>

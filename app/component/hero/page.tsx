@@ -12,6 +12,7 @@ import {
   Text,
 } from "elk-components";
 import BubbleBackground from "./BubbleBackground";
+import { DownloadIcon } from "../../lib/BrandIcons";
 
 const Hero = () => {
   return (
@@ -82,7 +83,7 @@ const Hero = () => {
               delay={150}
               child={() => (
                 <Text
-                  text="Inovation, Multivation & Admiration"
+                  text="Innovation, Motivation & Admiration"
                   type="h1"
                   size="clamp(2.2rem, 4svw, 4rem)"
                   className="hero-title"
@@ -166,6 +167,28 @@ const Hero = () => {
                       <>
                         <strong>Contact</strong>
                         <Icon icon={Icons.icon.Contact} size={20} />
+                      </>
+                    )}
+                  />
+                  <Gap width="1rem" />
+                  <Button
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: ".4rem",
+                      background: "transparent",
+                      borderRadius: "9999px",
+                      padding: ".6rem 1.3rem",
+                      color: "var(--muted)",
+                      border: "1px solid var(--border)",
+                      fontFamily: "var(--font-space-grotesk)",
+                      fontWeight: 600,
+                      fontSize: "0.9rem",
+                    }}
+                    child={() => (
+                      <>
+                        <strong>Resume</strong>
+                        <DownloadIcon size={18} color="currentColor" />
                       </>
                     )}
                   />

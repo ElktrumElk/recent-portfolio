@@ -5,15 +5,23 @@ import {
   GitHubIcon,
   NextJSIcon,
   ReactIcon,
+  TypeScriptIcon,
   VSCodeIcon,
+  TailwindIcon,
+  FlutterIcon,
+  NodeJSIcon,
 } from "../../lib/BrandIcons";
 
 const platforms = [
   { name: "Next.js", icon: NextJSIcon },
+  { name: "React", icon: ReactIcon },
+  { name: "TypeScript", icon: TypeScriptIcon },
+  { name: "Node.js", icon: NodeJSIcon },
+  { name: "Flutter", icon: FlutterIcon },
+  { name: "Tailwind CSS", icon: TailwindIcon },
   { name: "VS Code", icon: VSCodeIcon },
   { name: "GitHub", icon: GitHubIcon },
   { name: "Dribbble", icon: DribbbleIcon },
-  { name: "React", icon: ReactIcon },
 ];
 
 const Item = ({

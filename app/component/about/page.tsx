@@ -76,11 +76,10 @@ const About = () => {
               child={() => (
                 <Text
                   type="p"
-                  text={`A fullstack develpoer developing both mobile and web application with sophisticated interface,
-                 easily accessible to users. ''I believe for one to go fast one need to be alone but for one to go 
-                 far need team with high level of effort.''
-                 \n
-                 `}
+                  text={`A fullstack developer building both mobile and web applications with sophisticated interfaces,
+                 easily accessible to users. 'I believe for one to go fast one needs to be alone, but for one to go 
+                 far one needs a team with high levels of effort.'`}
+
                   color="var(--muted)"
                   size="1rem"
                   style={{
@@ -100,9 +99,9 @@ const About = () => {
               child={() => (
                 <Text
                   type="p"
-                  text={` My goal is to develop and solve human problems which can be solved by technology and help inspired yound ones. I am not only good in technology  
-                but good with communication and environment interaction. 
-                 `}
+                  text={`My goal is to develop and solve human problems with technology and help inspire young minds. I am not only skilled in technology  
+                but also in communication and environmental interaction.`}
+
                   color="var(--muted)"
                   size="1rem"
                   style={{
