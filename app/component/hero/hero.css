@@ -16,6 +16,16 @@
     background: #000000;
     color: #f6f6f6;
     overflow: hidden;
+    animation: heroFadeIn 0.5s ease-out both;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hero-btn-cnt {
@@ -36,6 +46,7 @@
     overflow: hidden;
     z-index: 0;
     pointer-events: none;
+    animation: heroFadeIn 0.9s ease-out 0.05s both;
 }
 
 .hero-splash__svg {
@@ -104,6 +115,18 @@
 /* ---- glowing 3D cube ---- */
 .hero-cube {
     perspective: 900px;
+    animation: heroCubeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+@keyframes heroCubeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-cube::before {

@@ -8,6 +8,7 @@ import {
   Gap,
   Icon,
   Icons,
+  LetterAnimation,
   SectionDivider,
   Text,
 } from "elk-components";
@@ -41,6 +42,7 @@ const Hero = () => {
               animate={{ transform: "translateY(0)", opacity: "1" }}
               exit={{ transform: "translateY(-30%)", opacity: "0" }}
               duration={200}
+              delay={0}
               child={() => (
                 <Badge
                   style={{
@@ -78,28 +80,39 @@ const Hero = () => {
               initial={{ transform: "translateX(-40%)", opacity: "0" }}
               animate={{ transform: "translateX(0)", opacity: "1" }}
               exit={{ transform: "translateX(-40%)", opacity: "0" }}
+              delay={80}
               child={() => <Text text="UI & Fullstack Developer" type="h3" className="hero-eyebrow" />}
             />
 
             <Gap height="1.2rem" />
 
             <Animation
-              initial={{ transform: "translateX(-40%)", opacity: "0" }}
-              animate={{ transform: "translateX(0)", opacity: "1" }}
-              exit={{ transform: "translateX(-40%)", opacity: "0" }}
-              delay={150}
+              initial={{ opacity: "0" }}
+              animate={{ opacity: "1" }}
+              duration={10}
+              delay={170}
               child={() => (
                 <div className="hero-title-wrap">
-                  <Text
+                  <LetterAnimation
                     text="Innovation, Motivation"
-                    type="h1"
+                    type="words"
+                    animation="dropIn"
+                    duration={600}
+                    delay={200}
+                    stagger={140}
                     size="clamp(2.2rem, 5.3svw, 5.6rem)"
+                    textType="h1"
                     className="hero-title"
                   />
-                  <Text
+                  <LetterAnimation
                     text="& Admiration"
-                    type="h1"
+                    type="words"
+                    animation="dropIn"
+                    duration={600}
+                    delay={380}
+                    stagger={140}
                     size="clamp(2.2rem, 5.3svw, 5.6rem)"
+                    textType="h1"
                     className="hero-title hero-title--outline"
                   />
                 </div>
@@ -113,7 +126,7 @@ const Hero = () => {
               initial={{ transform: "translateY(40%)", opacity: "0" }}
               animate={{ transform: "translateY(0)", opacity: "1" }}
               exit={{ transform: "translateY(40%)", opacity: "0" }}
-              delay={350}
+              delay={460}
               child={() => (
                 <div className="hero-btn-cnt">
                   <Link href="#projects" style={{ textDecoration: "none" }}>

@@ -19,10 +19,6 @@
   --accent: #ea580c;
   --amber: #d97706;
 
-  --wash-1: #e8eefb;
-  --wash-2: #e6f7ef;
-  --wash-3: #fdf1e3;
-
   --splash-a: #171717;
   --splash-b: #8a8a8a;
   --splash-c: #d4d4d4;
@@ -50,10 +46,6 @@
   --secondary: #34d399;
   --accent: #fb923c;
   --amber: #fbbf24;
-
-  --wash-1: #16203a;
-  --wash-2: #123127;
-  --wash-3: #2a1d14;
 
   --splash-a: #e6e6e6;
   --splash-b: #5b5b5b;
@@ -85,11 +77,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(110% 90% at 88% -12%, var(--wash-1) 0%, rgba(255, 255, 255, 0) 52%),
-    radial-gradient(90% 70% at -12% 18%, var(--wash-2) 0%, rgba(255, 255, 255, 0) 48%),
-    radial-gradient(70% 60% at 50% 115%, var(--wash-3) 0%, rgba(255, 255, 255, 0) 55%),
-    var(--bg);
+  background: var(--bg);
   color: var(--fg);
   font-family: var(--font-space-grotesk);
   font-size: 18px;
