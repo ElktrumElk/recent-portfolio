@@ -3,6 +3,7 @@ import { Archivo, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import HeaderComponet from "./component/HeaderComponent";
 import SmoothScroll from "./component/SmoothScroll";
+import MouseGrid from "./component/MouseGrid/MouseGrid";
 import { siteConfig } from "./lib/site";
 import { JsonLd } from "./lib/json-ld";
 
@@ -103,8 +104,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <JsonLd />
         <SmoothScroll />
-        <HeaderComponet />
-        {children}
+        <MouseGrid />
+        <div className="app-shell">
+          <HeaderComponet />
+          {children}
+        </div>
       </body>
     </html>
   );
