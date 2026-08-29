@@ -3,6 +3,7 @@ import { Gap, Main, ScrollView } from "elk-components";
 import Hero from "./component/hero/page";
 import About from "./component/about/page";
 import Skill from "./component/skill/page";
+import Github from "./component/github/page";
 import Projects from "./component/projects/page";
 import Experience from "./component/experience/page";
 import Contact from "./component/contact/page";
@@ -64,6 +65,20 @@ export default function Home() {
                     }}
                   >
                     <Skill />
+                  </section>
+
+                  <Gap height="6rem" />
+
+                  <section
+                    id="github"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginBlockStart: "2rem",
+                    }}
+                  >
+                    <Github />
                   </section>
 
                   <Gap height="6rem" />

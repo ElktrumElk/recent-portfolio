@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {
+  Animation,
   Gap,
   Header,
   Icon,
@@ -9,7 +10,6 @@ import {
   List,
   ListView,
   Navigator,
-  Text,
 } from "elk-components";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
@@ -18,6 +18,7 @@ import "./HeaderComponent.css";
 const links = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#github", label: "GitHub" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
@@ -38,9 +39,7 @@ const HeaderComponet = (): React.ReactNode => {
         leading={() => <Icon icon={Icons.icon.Zap} color="var(--accent)" />}
         title={() => (
           <>
-            <Text
-              text="Elktrum Elk"
-              type="h1"
+            <Link
               className="brand-name"
               style={{
                 color: "var(--fg)",
@@ -48,10 +47,11 @@ const HeaderComponet = (): React.ReactNode => {
                 fontWeight: 700,
                 fontSize: "1.4rem",
               }}
-            />
-            <Text
-              text="EE"
-              type="h1"
+              href={"/"}
+            >
+              Elktrum Elk
+            </Link>
+            <Link
               className="brand-name brand-name--short"
               style={{
                 color: "var(--fg)",
@@ -59,7 +59,10 @@ const HeaderComponet = (): React.ReactNode => {
                 fontWeight: 700,
                 fontSize: "1.4rem",
               }}
-            />
+              href={"/"}
+            >
+              EE
+            </Link>
           </>
         )}
         action={() => (
@@ -93,7 +96,13 @@ const HeaderComponet = (): React.ReactNode => {
             <Navigator
               className="section-nav"
               child={() => (
-                <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: ".5rem",
+                  }}
+                >
                   <Link
                     href={"https://github.com/ElktrumElk"}
                     target="_blank"
@@ -127,8 +136,7 @@ const HeaderComponet = (): React.ReactNode => {
                 </div>
               )}
             />
-
-            <ThemeToggle />
+            <Animation initial={{transform: 'scale(1.1) translateY(200px)'}} animate={{transform: 'scale(1) translateY(0)'}}  child={() => <ThemeToggle />} />
 
             <button
               type="button"
