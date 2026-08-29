@@ -23,13 +23,14 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <Container
+        className="footer-inner"
         style={{
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          maxWidth: "1000px",
+          maxWidth: "1400px",
           alignSelf: "center",
-          padding: "3rem 1rem 1.5rem",
+          padding: "3rem clamp(1.5rem, 5vw, 4.5rem) 1.5rem",
         }}
         child={() => (
           <>

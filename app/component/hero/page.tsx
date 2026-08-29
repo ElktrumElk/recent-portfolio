@@ -78,7 +78,7 @@ const Hero = () => {
               initial={{ transform: "translateX(-40%)", opacity: "0" }}
               animate={{ transform: "translateX(0)", opacity: "1" }}
               exit={{ transform: "translateX(-40%)", opacity: "0" }}
-              child={() => <Text text="Hello, world." type="h3" className="hero-eyebrow" />}
+              child={() => <Text text="UI & Fullstack Developer" type="h3" className="hero-eyebrow" />}
             />
 
             <Gap height="1.2rem" />
@@ -116,20 +116,22 @@ const Hero = () => {
               delay={350}
               child={() => (
                 <div className="hero-btn-cnt">
-                  <Button
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: ".5rem",
-                    }}
-                    className="hero-btn hero-btn--primary"
-                    child={() => (
-                      <>
-                        <strong>Projects</strong>
-                        <Icon icon={Icons.icon.ArrowRight} />
-                      </>
-                    )}
-                  />
+                  <Link href="#projects" style={{ textDecoration: "none" }}>
+                    <Button
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: ".5rem",
+                      }}
+                      className="hero-btn hero-btn--primary"
+                      child={() => (
+                        <>
+                          <strong>Projects</strong>
+                          <Icon icon={Icons.icon.ArrowRight} />
+                        </>
+                      )}
+                    />
+                  </Link>
                   <Gap width="1rem" />
 
                   <Link href="#contact" style={{ textDecoration: "none" }}>

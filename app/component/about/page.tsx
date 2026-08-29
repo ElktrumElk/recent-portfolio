@@ -63,7 +63,7 @@ const About = () => {
                   size="clamp(2.5rem, 4.5vw, 3.5rem)"
                   style={{
                     fontWeight: 900,
-                    fontFamily: "var(--font-fraunces)",
+                    fontFamily: "var(--font-archivo)",
                     letterSpacing: "-0.02em",
                   }}
                 />

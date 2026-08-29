@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import HeaderComponet from "./component/HeaderComponent";
+import SmoothScroll from "./component/SmoothScroll";
 import { siteConfig } from "./lib/site";
 import { JsonLd } from "./lib/json-ld";
 
@@ -101,6 +102,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <JsonLd />
+        <SmoothScroll />
         <HeaderComponet />
         {children}
       </body>

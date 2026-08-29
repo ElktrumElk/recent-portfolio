@@ -49,7 +49,7 @@ const Skill = () => {
             size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
-              fontFamily: "var(--font-fraunces)",
+              fontFamily: "var(--font-archivo)",
               letterSpacing: "-0.02em",
               marginBottom: "0.5rem",
             }}

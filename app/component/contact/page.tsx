@@ -53,7 +53,7 @@ const Contact = () => {
             size="clamp(2rem, 3.5vw, 2.8rem)"
             style={{
               fontWeight: 900,
-              fontFamily: "var(--font-fraunces)",
+              fontFamily: "var(--font-archivo)",
               letterSpacing: "-0.02em",
               marginBottom: "0.5rem",
               textAlign: "center",
@@ -130,7 +130,14 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             child={() => (
-              <a href={`mailto:elkanah@example.com`} className="contact-cta">
+              <a
+                href={`https://wa.me/076413626?text=${encodeURIComponent(
+                  "Hello Elktrum Elk, I'd love to talk about a project."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-cta"
+              >
                 <Button
                   style={{
                     display: "flex",
