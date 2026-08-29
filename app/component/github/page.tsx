@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Container, Text } from "elk-components";
 import "./github.css";
@@ -128,6 +128,7 @@ function buildMonthMarks(weeks: GhWeek[]): MonthMark[] {
 const Github = () => {
   const [data, setData] = useState<GhData | null>(null);
   const [loading, setLoading] = useState(true);
+  const plotRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -155,6 +156,26 @@ const Github = () => {
   const firstWeekday = firstDate ? getDay(firstDate) : 0;
   const monthMarks = weeks.length ? buildMonthMarks(weeks) : [];
   const cols = Math.max(weeks.length, 1);
+
+  useEffect(() => {
+    const plot = plotRef.current;
+    if (!plot) return;
+    const main = plot.querySelector<HTMLElement>(".gh-calendar__main");
+    const applyCellSize = () => {
+      if (!main) return;
+      const gap = 3;
+      const width = main.getBoundingClientRect().width;
+      const cell = Math.max(
+        6,
+        Math.min(16, Math.floor((width - (cols - 1) * gap) / cols))
+      );
+      plot.style.setProperty("--gh-cell", `${cell}px`);
+    };
+    applyCellSize();
+    const observer = new ResizeObserver(applyCellSize);
+    if (main) observer.observe(main);
+    return () => observer.disconnect();
+  }, [cols]);
 
   const stats: [string, string][] = [];
   if (data?.contributions?.total != null) {
@@ -267,7 +288,7 @@ const Github = () => {
                 </div>
 
                 <div className="gh-calendar">
-                  <div className="gh-calendar__plot">
+                  <div className="gh-calendar__plot" ref={plotRef}>
                     <div className="gh-calendar__gutter">
                       {[0, 1, 2, 3, 4, 5, 6].map((row) => {
                         const wd = (row + firstWeekday) % 7;

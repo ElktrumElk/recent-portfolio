@@ -174,7 +174,7 @@ async function fetchStats(): Promise<GhData["stats"]> {
 async function fetchContributions(): Promise<GhData["contributions"]> {
   const html = await httpHtml(`/users/${USERNAME}/contributions`);
 
-  const totalMatch = html.match(/>\s*([\d,]+)\s+contributions?\s*</i);
+  const totalMatch = html.match(/([\d,]{2,})\s+contributions?\b/i);
   const total = totalMatch
     ? Number(totalMatch[1].replace(/[^\d]/g, "")) || 0
     : 0;
