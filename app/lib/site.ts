@@ -12,7 +12,7 @@ export const siteConfig: {
   name: "Elkanah Cole",
   role: "UI & Software Developer",
   title: "Elkanah Cole — UI & Software Developer",
-  url: "https://elkrumelk.vercel.app",
+  url: "https://elktrumelk.xyz",
   github: "https://github.com/ElktrumElk",
   twitter: "https://x.com/ElktrumElk",
   handle: "@ElktrumElk",
@@ -33,5 +33,8 @@ export const siteConfig: {
     "Tailwind CSS",
     "UI/UX design",
     "accessible interfaces",
+    "Sierra Leone Devs",
+    "Salone Devs",
+    "github users"
   ],
 };
