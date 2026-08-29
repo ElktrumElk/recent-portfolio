@@ -13,8 +13,8 @@ import { siteConfig } from "../../lib/site";
 const contactLinks = [
   {
     label: "Email",
-    value: "elkanah@example.com",
-    href: "mailto:elkanah@example.com",
+    value: "festinacole373@example.com",
+    href: "mailto:festinacole373@example.com",
     icon: Icons.icon.Contact,
   },
   {

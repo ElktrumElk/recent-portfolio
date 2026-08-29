@@ -42,7 +42,7 @@ const Footer = () => {
                   text="Elktrum Elk"
                   color="var(--fg)"
                   style={{
-                    fontFamily: "var(--font-fraunces)",
+                    fontFamily: "var(--font-archivo)",
                     fontWeight: 700,
                     fontSize: "1.35rem",
                   }}

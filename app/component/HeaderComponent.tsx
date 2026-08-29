@@ -37,16 +37,30 @@ const HeaderComponet = (): React.ReactNode => {
         underLine="1px solid var(--border)"
         leading={() => <Icon icon={Icons.icon.Zap} color="var(--accent)" />}
         title={() => (
-          <Text
-            text="Elktrum Elk"
-            type="h1"
-            style={{
-              color: "var(--fg)",
-              fontFamily: "var(--font-fraunces)",
-              fontWeight: 700,
-              fontSize: "1.45rem",
-            }}
-          />
+          <>
+            <Text
+              text="Elktrum Elk"
+              type="h1"
+              className="brand-name"
+              style={{
+                color: "var(--fg)",
+                fontFamily: "var(--font-archivo)",
+                fontWeight: 700,
+                fontSize: "1.4rem",
+              }}
+            />
+            <Text
+              text="EE"
+              type="h1"
+              className="brand-name brand-name--short"
+              style={{
+                color: "var(--fg)",
+                fontFamily: "var(--font-archivo)",
+                fontWeight: 700,
+                fontSize: "1.4rem",
+              }}
+            />
+          </>
         )}
         action={() => (
           <div className="section-div">

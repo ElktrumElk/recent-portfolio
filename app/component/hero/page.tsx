@@ -16,24 +16,25 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <>
-      <SectionDivider variant="curl" color="var(--amber)" animate height={54} />
+    <div className="hero">
+      <SectionDivider variant="curl" color="#1b1b1b" animate height={54} />
 
       <BubbleBackground />
 
-      <Container
-        className="cnt"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-          maxWidth: "820px",
-          alignSelf: "center",
-          justifyContent: "center",
-        }}
-        child={() => (
+      <div className="hero-inner">
+        <Container
+          className="cnt"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            width: "auto",
+            height: "auto",
+            maxWidth: "860px",
+            alignSelf: "center",
+            justifyContent: "center",
+          }}
+          child={() => (
           <>
             <Animation
               initial={{ transform: "translateY(-30%)", opacity: "0" }}
@@ -43,38 +44,44 @@ const Hero = () => {
               child={() => (
                 <Badge
                   style={{
-                    padding: ".4rem .9rem",
+                    padding: ".45rem 1.1rem",
                     borderWidth: "1px",
                     borderStyle: "solid",
                     borderRadius: "9999px",
                   }}
                   color="var(--fg)"
-                  backgroundColor="var(--card)"
-                  borderColor="var(--accent)"
+                  backgroundColor="var(--bg)"
+                  borderColor="var(--fg)"
                   child={() => (
-                    <Text
-                      text="Available for Work"
-                      type="p"
-                      style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 500 }}
-                    />
+                    <div className="hero-badge">
+                      <span className="hero-badge__dot" />
+                      <Text
+                        text="Available for Work"
+                        type="p"
+                        style={{
+                          fontFamily: "var(--font-space-grotesk)",
+                          fontWeight: 700,
+                          fontSize: "0.82rem",
+                          letterSpacing: "0.14em",
+                          textTransform: "uppercase",
+                        }}
+                      />
+                    </div>
                   )}
                 />
               )}
             />
 
+            <Gap height="1.6rem" />
+
             <Animation
               initial={{ transform: "translateX(-40%)", opacity: "0" }}
               animate={{ transform: "translateX(0)", opacity: "1" }}
               exit={{ transform: "translateX(-40%)", opacity: "0" }}
-              child={() => (
-                <Text
-                  text="Hello, world."
-                  type="h3"
-                  size="clamp(1.8rem, 2.8svw, 2.8rem)"
-                  className="hero-script"
-                />
-              )}
+              child={() => <Text text="Hello, world." type="h3" className="hero-eyebrow" />}
             />
+
+            <Gap height="1.2rem" />
 
             <Animation
               initial={{ transform: "translateX(-40%)", opacity: "0" }}
@@ -82,41 +89,24 @@ const Hero = () => {
               exit={{ transform: "translateX(-40%)", opacity: "0" }}
               delay={150}
               child={() => (
-                <Text
-                  text="Innovation, Motivation & Admiration"
-                  type="h1"
-                  size="clamp(2.6rem, 5svw, 4.8rem)"
-                  className="hero-title"
-                  style={{
-                    textAlign: "center",
-                    fontWeight: 900,
-                    letterSpacing: "-0.02em",
-                  }}
-                />
+                <div className="hero-title-wrap">
+                  <Text
+                    text="Innovation, Motivation"
+                    type="h1"
+                    size="clamp(2.2rem, 5.3svw, 5.6rem)"
+                    className="hero-title"
+                  />
+                  <Text
+                    text="& Admiration"
+                    type="h1"
+                    size="clamp(2.2rem, 5.3svw, 5.6rem)"
+                    className="hero-title hero-title--outline"
+                  />
+                </div>
               )}
             />
 
-            <Animation
-              initial={{ transform: "translateX(40%)", opacity: "0" }}
-              animate={{ transform: "translateX(0)", opacity: "1" }}
-              exit={{ transform: "translateX(40%)", opacity: "0" }}
-              delay={250}
-              child={() => (
-                <Text
-                  text="UI & Software Developer"
-                  type="p"
-                  size="clamp(1.15rem, 1.6svw, 1.8rem)"
-                  style={{
-                    textAlign: "center",
-                    fontFamily: "var(--font-space-grotesk)",
-                    fontWeight: 500,
-                    color: "var(--muted)",
-                  }}
-                />
-              )}
-            />
-
-            <Gap height="1.2rem" />
+            <Gap height="2rem" />
 
             <Animation
               className="anim"
@@ -125,23 +115,14 @@ const Hero = () => {
               exit={{ transform: "translateY(40%)", opacity: "0" }}
               delay={350}
               child={() => (
-                <div style={{ display: "flex" }} className="hero-btn-cnt">
+                <div className="hero-btn-cnt">
                   <Button
                     style={{
                       display: "flex",
                       alignItems: "center",
                       gap: ".5rem",
-                      background:
-                        "linear-gradient(90deg, var(--accent), var(--amber))",
-                      borderRadius: "9999px",
-                      padding: ".75rem 1.7rem",
-                      color: "#fffdf6",
-                      boxShadow: "0 8px 20px var(--shadow)",
-                      fontFamily: "var(--font-space-grotesk)",
-                      fontWeight: 700,
-                      fontSize: "1.05rem",
-                      border: "none",
                     }}
+                    className="hero-btn hero-btn--primary"
                     child={() => (
                       <>
                         <strong>Projects</strong>
@@ -157,15 +138,8 @@ const Hero = () => {
                         display: "flex",
                         alignItems: "center",
                         gap: ".5rem",
-                        background: "var(--card)",
-                        borderRadius: "9999px",
-                        padding: ".75rem 1.7rem",
-                        color: "var(--primary)",
-                        border: "2px solid var(--primary)",
-                        fontFamily: "var(--font-space-grotesk)",
-                        fontWeight: 700,
-                        fontSize: "1.05rem",
                       }}
+                      className="hero-btn hero-btn--secondary"
                       child={() => (
                         <>
                           <strong>Contact</strong>
@@ -180,7 +154,19 @@ const Hero = () => {
           </>
         )}
       />
-    </>
+
+      <div className="hero-side hero-cube" aria-hidden="true">
+        <div className="cube">
+          <div className="cube-face cube-face--front" />
+          <div className="cube-face cube-face--back" />
+          <div className="cube-face cube-face--right" />
+          <div className="cube-face cube-face--left" />
+          <div className="cube-face cube-face--top" />
+          <div className="cube-face cube-face--bottom" />
+        </div>
+      </div>
+      </div>
+    </div>
   );
 };
 

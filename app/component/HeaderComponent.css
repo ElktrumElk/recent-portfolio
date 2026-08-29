@@ -1,7 +1,26 @@
 .header-root {
+    --bg: #0a0a0a;
+    --fg: #f4f4f4;
+    --card: #101010;
+    --muted: #9a9a9a;
+    --border: rgba(255, 255, 255, 0.18);
+    --accent: #f4f4f4;
+    --primary: #f4f4f4;
+    --blue: #bdbdbd;
+    --secondary: #e0e0e0;
+    --header-bg: #000000;
+
     position: relative;
     width: 100%;
     z-index: 50;
+}
+
+.brand-name {
+    transition: opacity 0.2s ease;
+}
+
+.brand-name--short {
+    display: none;
 }
 
 .nav-pill {
@@ -17,12 +36,12 @@
 }
 
 .nav-pill:hover {
-    background: linear-gradient(90deg, var(--primary), var(--blue));
+    background: #f4f4f4;
 }
 
 .nav-pill:hover,
 .nav-pill:hover a {
-    color: #ffffff;
+    color: #0a0a0a;
 }
 
 .theme-toggle,
@@ -102,5 +121,11 @@
 @media (max-width: 780px) {
     .hamburger {
         display: inline-flex;
+    }
+    .brand-name {
+        display: none;
+    }
+    .brand-name--short {
+        display: inline;
     }
 }

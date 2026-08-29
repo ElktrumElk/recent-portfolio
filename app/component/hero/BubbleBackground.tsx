@@ -1,3 +1,39 @@
+const FILLS = [
+  "rgba(28, 30, 36, 0.55)",
+  "rgba(20, 22, 28, 0.6)",
+  "rgba(36, 38, 44, 0.45)",
+];
+
+const BUBBLES = [
+  { cx: 168, cy: 636, r: 96, f: 0, o: 0.9, w: 1.4 },
+  { cx: 318, cy: 512, r: 44, f: 1, o: 0.85, w: 1.1 },
+  { cx: 122, cy: 402, r: 27, f: 2, o: 0.8, w: 1 },
+  { cx: 546, cy: 286, r: 62, f: 1, o: 0.9, w: 1.2 },
+  { cx: 624, cy: 398, r: 25, f: 0, o: 0.8, w: 1 },
+  { cx: 764, cy: 198, r: 39, f: 2, o: 0.85, w: 1.1 },
+  { cx: 906, cy: 496, r: 84, f: 0, o: 0.9, w: 1.3 },
+  { cx: 1004, cy: 322, r: 24, f: 1, o: 0.8, w: 1 },
+  { cx: 1100, cy: 560, r: 52, f: 2, o: 0.9, w: 1.2 },
+  { cx: 1240, cy: 196, r: 31, f: 0, o: 0.85, w: 1.1 },
+  { cx: 1332, cy: 352, r: 19, f: 1, o: 0.8, w: 1 },
+  { cx: 856, cy: 680, r: 35, f: 2, o: 0.85, w: 1.1 },
+  { cx: 1086, cy: 118, r: 54, f: 0, o: 0.9, w: 1.2 },
+  { cx: 700, cy: 118, r: 21, f: 1, o: 0.8, w: 1 },
+  { cx: 420, cy: 168, r: 31, f: 2, o: 0.85, w: 1.1 },
+  { cx: 1218, cy: 758, r: 61, f: 0, o: 0.9, w: 1.3 },
+];
+
+const SPARKS = [
+  { cx: 96, cy: 208, r: 2.4 },
+  { cx: 232, cy: 720, r: 3 },
+  { cx: 480, cy: 150, r: 2 },
+  { cx: 672, cy: 700, r: 2.6 },
+  { cx: 940, cy: 120, r: 2.2 },
+  { cx: 1160, cy: 640, r: 3 },
+  { cx: 1360, cy: 500, r: 2.2 },
+  { cx: 820, cy: 300, r: 2 },
+];
+
 const BubbleBackground = () => {
   return (
     <div className="hero-splash" aria-hidden="true">
@@ -6,76 +42,31 @@ const BubbleBackground = () => {
         preserveAspectRatio="xMidYMid slice"
         className="hero-splash__svg"
       >
-        <defs>
-          <linearGradient id="splashTeal" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" style={{ stopColor: "var(--splash-a)" }} stopOpacity="0.12" />
-            <stop offset="55%" style={{ stopColor: "var(--splash-a)" }} stopOpacity="0.55" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-a)" }} stopOpacity="0.9" />
-          </linearGradient>
-          <linearGradient id="splashCoral" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" style={{ stopColor: "var(--splash-b)" }} stopOpacity="0.45" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-b)" }} stopOpacity="0.85" />
-          </linearGradient>
-          <linearGradient id="splashSunny" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" style={{ stopColor: "var(--splash-c)" }} stopOpacity="0.95" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-c)" }} stopOpacity="0.4" />
-          </linearGradient>
-          <radialGradient id="bubbleTeal" cx="35%" cy="30%" r="72%">
-            <stop offset="0%" style={{ stopColor: "var(--card)" }} stopOpacity="0.9" />
-            <stop offset="45%" style={{ stopColor: "var(--bubble-a)" }} stopOpacity="0.45" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-a)" }} stopOpacity="0.25" />
-          </radialGradient>
-          <radialGradient id="bubbleCoral" cx="35%" cy="30%" r="72%">
-            <stop offset="0%" style={{ stopColor: "var(--card)" }} stopOpacity="0.9" />
-            <stop offset="45%" style={{ stopColor: "var(--bubble-b)" }} stopOpacity="0.45" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-b)" }} stopOpacity="0.25" />
-          </radialGradient>
-          <radialGradient id="bubbleSunny" cx="35%" cy="30%" r="72%">
-            <stop offset="0%" style={{ stopColor: "var(--card)" }} stopOpacity="0.9" />
-            <stop offset="45%" style={{ stopColor: "var(--bubble-c)" }} stopOpacity="0.45" />
-            <stop offset="100%" style={{ stopColor: "var(--splash-c)" }} stopOpacity="0.25" />
-          </radialGradient>
-        </defs>
-
-        <g className="hero-splash__blob hero-splash__blob--main">
-          <path
-            d="M0,900 C90,760 210,700 360,720 C520,742 640,680 800,700 C960,720 1080,650 1220,680 C1330,703 1410,660 1440,640 L1440,900 Z"
-            fill="url(#splashTeal)"
-          />
-        </g>
-
-        <g className="hero-splash__blob hero-splash__blob--coral">
-          <path
-            d="M0,300 C60,380 170,470 320,520 C380,538 420,610 370,660 C320,710 180,750 60,770 C20,778 5,790 0,800 Z"
-            fill="url(#splashCoral)"
-          />
-        </g>
-
-        <g className="hero-splash__blob hero-splash__blob--sunny">
-          <path
-            d="M1440,0 C1290,30 1210,130 1240,250 C1270,370 1360,430 1440,400 Z"
-            fill="url(#splashSunny)"
-          />
-        </g>
-
         <g className="hero-splash__bubbles">
-          <circle className="bubble" cx="180" cy="640" r="92" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="2" />
-          <circle className="bubble" cx="322" cy="508" r="42" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="120" cy="410" r="26" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="545" cy="292" r="62" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="625" cy="404" r="24" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
-          <circle className="bubble" cx="762" cy="204" r="38" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="905" cy="500" r="82" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="2" />
-          <circle className="bubble" cx="1005" cy="326" r="22" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
-          <circle className="bubble" cx="1102" cy="562" r="50" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="1240" cy="196" r="30" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="1332" cy="356" r="18" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
-          <circle className="bubble" cx="858" cy="682" r="34" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="1086" cy="118" r="52" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="700" cy="120" r="20" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
-          <circle className="bubble" cx="420" cy="170" r="30" fill="url(#bubbleCoral)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
-          <circle className="bubble" cx="230" cy="240" r="14" fill="url(#bubbleSunny)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1" />
-          <circle className="bubble" cx="1220" cy="760" r="60" fill="url(#bubbleTeal)" style={{ stroke: "var(--bubble-stroke)" }} strokeWidth="1.5" />
+          {BUBBLES.map((b, i) => (
+            <circle
+              key={i}
+              className="bubble"
+              cx={b.cx}
+              cy={b.cy}
+              r={b.r * 0.78}
+              fill={FILLS[b.f % FILLS.length]}
+              fillOpacity={b.o}
+              stroke="var(--bubble-stroke)"
+              strokeWidth={b.w}
+            />
+          ))}
+          {SPARKS.map((s, i) => (
+            <circle
+              key={`spark-${i}`}
+              className="bubble spark"
+              cx={s.cx}
+              cy={s.cy}
+              r={s.r}
+              fill="var(--bubble-stroke)"
+              fillOpacity={0.7}
+            />
+          ))}
         </g>
       </svg>
     </div>

@@ -1,75 +1,74 @@
 @import "tailwindcss";
 
-/* ---------- Light theme (masculine postcard) ---------- */
+/* ---------- Light theme (monochrome) ---------- */
 :root {
   color-scheme: light;
 
-  --bg: #ece7de;
-  --bg-soft: #dcd2c2;
-  --fg: #1c2733;
-  --muted: #5f6b74;
-  --card: #f8f4ec;
-  --border: rgba(28, 39, 51, 0.16);
-  --header-bg: rgba(236, 231, 222, 0.6);
-  --shadow: rgba(28, 39, 51, 0.18);
+  --bg: #fafafa;
+  --bg-soft: #e9e9e9;
+  --fg: #0a0a0a;
+  --muted: #616161;
+  --card: #ffffff;
+  --border: rgba(10, 10, 10, 0.18);
+  --header-bg: rgba(250, 250, 250, 0.72);
+  --shadow: rgba(10, 10, 10, 0.18);
 
-  --primary: #205a8a;
-  --blue: #2f6f9f;
-  --secondary: #2f6b53;
-  --accent: #c0512f;
-  --amber: #7a8b96;
+  --primary: #0a0a0a;
+  --blue: #3d3d3d;
+  --secondary: #1f1f1f;
+  --accent: #0a0a0a;
+  --amber: #6e6e6e;
 
-  --wash-1: #e6d3a8;
-  --wash-2: #ccdce7;
-  --wash-3: #ddd2bd;
+  --wash-1: #f2f2f2;
+  --wash-2: #e8e8e8;
+  --wash-3: #efefef;
 
-  --splash-a: #205a8a;
-  --splash-b: #c0512f;
-  --splash-c: #5a6a74;
-  --bubble-a: #c3dced;
-  --bubble-b: #eecfbe;
-  --bubble-c: #c8d0d6;
-  --bubble-stroke: rgba(255, 255, 255, 0.55);
+  --splash-a: #171717;
+  --splash-b: #8a8a8a;
+  --splash-c: #d4d4d4;
+  --bubble-a: #e3e3e3;
+  --bubble-b: #efefef;
+  --bubble-c: #d9d9d9;
+  --bubble-stroke: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- Dark theme (professional slate) ---------- */
+/* ---------- Dark theme (monochrome inverted) ---------- */
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #111318;
-  --bg-soft: #1a1d24;
-  --fg: #e2e4e8;
-  --muted: #8b919a;
-  --card: #181b22;
-  --border: rgba(255, 255, 255, 0.08);
-  --header-bg: rgba(17, 19, 24, 0.75);
-  --shadow: rgba(0, 0, 0, 0.5);
+  --bg: #080808;
+  --bg-soft: #141414;
+  --fg: #f4f4f4;
+  --muted: #999999;
+  --card: #101010;
+  --border: rgba(255, 255, 255, 0.16);
+  --header-bg: rgba(8, 8, 8, 0.75);
+  --shadow: rgba(0, 0, 0, 0.55);
 
-  --primary: #6ba3d6;
-  --blue: #7bb3e0;
-  --secondary: #6bc4a0;
-  --accent: #e07850;
-  --amber: #8a9ca8;
+  --primary: #f4f4f4;
+  --blue: #bdbdbd;
+  --secondary: #e0e0e0;
+  --accent: #f4f4f4;
+  --amber: #999999;
 
-  --wash-1: #1a2030;
-  --wash-2: #151c28;
-  --wash-3: #131820;
+  --wash-1: #141414;
+  --wash-2: #101010;
+  --wash-3: #181818;
 
-  --splash-a: #162d4a;
-  --splash-b: #2a1e1a;
-  --splash-c: #1c2430;
-  --bubble-a: #1a3a58;
-  --bubble-b: #2e2220;
-  --bubble-c: #1e2a38;
-  --bubble-stroke: rgba(255, 255, 255, 0.08);
+  --splash-a: #e6e6e6;
+  --splash-b: #5b5b5b;
+  --splash-c: #232323;
+  --bubble-a: #282828;
+  --bubble-b: #383838;
+  --bubble-c: #1d1d1d;
+  --bubble-stroke: rgba(255, 255, 255, 0.16);
 }
 
 @theme inline {
   --color-background: var(--bg);
   --color-foreground: var(--fg);
   --font-sans: var(--font-space-grotesk);
-  --font-display: var(--font-fraunces);
-  --font-script: var(--font-caveat);
+  --font-display: var(--font-archivo);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -93,7 +92,7 @@ body {
     var(--bg);
   color: var(--fg);
   font-family: var(--font-space-grotesk);
-  font-size: 17px;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;

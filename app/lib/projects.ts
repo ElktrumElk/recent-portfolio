@@ -107,7 +107,7 @@ export const projects: Project[] = [
       "Multi-device sync",
     ],
     repoLink: "https://github.com/favmaclegend-ops/MerchantCore",
-    liveLink: "https://merchant-core-web.vercel.app/",
+    liveLink: "https://merchantcore.netlify.app",
     dateStarted: "2026-03",
     dateEnded: null,
     icon: "CreditCard",
