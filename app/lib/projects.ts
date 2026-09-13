@@ -40,6 +40,54 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "sky",
+    name: "Sky",
+    slug: "sky",
+    color: "#036ec5",
+    description:
+      "A Sierra Leonean shipping, maritime and logistics agency — locally rooted, connected to the world.",
+    longDescription:
+      "Sky Shipping Agency (SL) Ltd is a Sierra Leonean shipping and maritime agency based in Cline Town, Freetown. The company acts as a port agent, clearing and forwarding agent, and ship broker — handling vessel operations, cargo documentation and freight computation for ships calling at Sierra Leonean ports.",
+    category: "fullstack",
+    status: "active",
+    techStack: ["RSC", "Next.js", "elk-components", "TypeScript",],
+    features: [
+      "In app ChatBox",
+      "News and Updates",
+      "Office Geo Location",
+      "Get a quote",
+      
+    ],
+    repoLink: "https://https://github.com/ElktrumElk/sky",
+    liveLink: "https://sky-ebon-sigma.vercel.app",
+    dateStarted: "2026-08",
+    dateEnded: null,
+    icon: "Newspaper",
+    seo: {
+      title: "Sky — SHIPPINGAgency (SL) Ltd",
+      description:
+        "A Sierra Leonean shipping, maritime and logistics agency — locally rooted, connected to the world.",
+      keywords: [
+        "sky",
+        "SKY",
+        "Sierra Leone shipping agency",
+        "vessel",
+        "shipping",
+        "shipment",
+        "travel",
+        "goods",
+        "sierra leone travel",
+        "sierra leone shipping company",
+      ],
+      openGraph: {
+        title: "Sky — SHIPPINGAgency (SL) Ltd",
+        description:
+          "A Sierra Leonean shipping, maritime and logistics agency — locally rooted, connected to the world.",
+        type: "website",
+      },
+    },
+  },
+  {
     id: "newsroom",
     name: "Newsroom",
     slug: "newsroom",

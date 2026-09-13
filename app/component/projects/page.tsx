@@ -200,6 +200,23 @@ const Projects = () => {
                         ))}
                       </div>
 
+                      {project.liveLink && (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-card__preview"
+                          aria-label={`Preview ${project.name}`}
+                        >
+                          Preview
+                          <Icon
+                            icon={Icons.icon.ArrowUpRight}
+                            color="currentColor"
+                            size={16}
+                          />
+                        </a>
+                      )}
+
                       <div className="project-card__footer">
                         <span className="project-card__date">
                           {project.dateStarted}

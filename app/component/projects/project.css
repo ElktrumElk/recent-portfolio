@@ -47,6 +47,7 @@
     transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -163,6 +164,31 @@
     font-size: 0.9rem;
     font-weight: 500;
     font-family: var(--font-space-grotesk);
+}
+
+.project-card__preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-family: var(--font-space-grotesk);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.project-card__preview:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .project-card__footer {
