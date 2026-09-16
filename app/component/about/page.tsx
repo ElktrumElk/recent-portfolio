@@ -76,10 +76,7 @@ const About = () => {
               child={() => (
                 <Text
                   type="p"
-                  text={`A fullstack developer building both mobile and web applications with sophisticated interfaces,
-                 easily accessible to users. 'I believe for one to go fast one needs to be alone, but for one to go 
-                 far one needs a team with high levels of effort.'`}
-
+                  text={`A fullstack developer crafting sophisticated, accessible experiences across web and mobile with React, Next.js, TypeScript, Node.js, and Flutter. I believe you go fast alone — but you go far with a team working at full effort, so everything I build is designed for clarity, performance, and collaboration.`}
                   color="var(--muted)"
                   size="1.15rem"
                   style={{
@@ -99,9 +96,7 @@ const About = () => {
               child={() => (
                 <Text
                   type="p"
-                  text={`My goal is to develop and solve human problems with technology and help inspire young minds. I am not only skilled in technology  
-                but also in communication and environmental interaction.`}
-
+                  text={`My mission is to solve real human problems with technology — and to inspire young minds to do the same. Beyond engineering, I bring strong communication, a user-first mindset, and a deep understanding of how digital products live and behave in the real world.`}
                   color="var(--muted)"
                   size="1.15rem"
                   style={{

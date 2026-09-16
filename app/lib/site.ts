@@ -17,7 +17,7 @@ export const siteConfig: {
   twitter: "https://x.com/ElktrumElk",
   handle: "@ElktrumElk",
   description:
-    "Portfolio of Elkanah Cole, a fullstack developer crafting sophisticated, accessible interfaces for web and mobile with React, Next.js, TypeScript, Node.js, and Flutter.",
+    "Elkanah Cole is a fullstack developer crafting sophisticated, accessible web and mobile interfaces with React, Next.js, TypeScript, Node.js, and Flutter — from concept to deployment.",
   keywords: [
     "Elkanah Cole",
     "Elktrum Elk",
