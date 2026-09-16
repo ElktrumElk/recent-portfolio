@@ -195,9 +195,45 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.75rem;
     margin-top: auto;
     padding-top: 0.75rem;
     border-top: 1px solid var(--border);
+}
+
+.project-card__footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+}
+
+.project-card__details {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent);
+    font-family: var(--font-space-grotesk);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.project-card__details:hover {
+    gap: 0.6rem;
+    color: var(--fg);
+}
+
+.project-card__title-link {
+    text-decoration: none;
+    display: inline-flex;
+    transition: opacity 0.2s ease;
+}
+
+.project-card__title-link:hover h3 {
+    color: var(--accent-hl, var(--accent)) !important;
 }
 
 .project-card__date {

@@ -22,6 +22,7 @@ import {
   ClockIcon,
   NewspaperIcon,
 } from "../../lib/BrandIcons";
+import Link from "next/link";
 import "./project.css";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; color?: string }>> = {
@@ -126,16 +127,21 @@ const Projects = () => {
                           <IconComp size={22} color={project.color} />
                         </div>
                         <div className="project-card__title-area">
-                          <Text
-                            type="h3"
-                            text={project.name}
-                            color="var(--fg)"
-                            style={{
-                              fontWeight: 700,
-                              fontFamily: "var(--font-archivo)",
-                              fontSize: "1.3rem",
-                            }}
-                          />
+                          <Link
+                            href={`/projects/${project.slug}`}
+                            className="project-card__title-link"
+                          >
+                            <Text
+                              type="h3"
+                              text={project.name}
+                              color="var(--fg)"
+                              style={{
+                                fontWeight: 700,
+                                fontFamily: "var(--font-archivo)",
+                                fontSize: "1.3rem",
+                              }}
+                            />
+                          </Link>
                           <span
                             className="project-card__category"
                             style={{ color: catInfo.color }}
@@ -218,17 +224,31 @@ const Projects = () => {
                       )}
 
                       <div className="project-card__footer">
-                        <span className="project-card__date">
-                          {project.dateStarted}
-                          {project.dateEnded
-                            ? ` — ${project.dateEnded}`
-                            : " — Present"}
-                        </span>
-                        <span
-                          className={`project-card__status project-card__status--${project.status}`}
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          className="project-card__details"
+                          aria-label={`View details for ${project.name}`}
                         >
-                          {project.status}
-                        </span>
+                          Details
+                          <Icon
+                            icon={Icons.icon.ArrowUpRight}
+                            color="currentColor"
+                            size={16}
+                          />
+                        </Link>
+                        <div className="project-card__footer-meta">
+                          <span className="project-card__date">
+                            {project.dateStarted}
+                            {project.dateEnded
+                              ? ` — ${project.dateEnded}`
+                              : " — Present"}
+                          </span>
+                          <span
+                            className={`project-card__status project-card__status--${project.status}`}
+                          >
+                            {project.status}
+                          </span>
+                        </div>
                       </div>
                     </article>
                   )}
