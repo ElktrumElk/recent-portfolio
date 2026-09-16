@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Elktrum Elk">
+  <title>Elktrum Elk</title>
+  <rect width="512" height="512" rx="110" fill="#0d0d0f" />
+  <g fill="#ea580c">
+    <path d="M256,142
+      C240,146 224,152 210,160
+      C196,168 186,184 184,200
+      C183,208 182,212 182,214
+      C158,206 140,210 126,224
+      C144,238 162,240 178,234
+      C179,248 182,262 191,274
+      C200,292 224,303 242,307
+      Q256,311 270,307
+      C288,303 312,292 321,274
+      C330,262 333,248 333,236
+      C348,242 368,240 386,224
+      C372,210 352,206 330,214
+      C330,198 322,184 310,174
+      C298,164 282,154 256,142
+      Z" />
+  </g>
+  <circle cx="204" cy="222" r="6" fill="#0d0d0f" />
+  <circle cx="308" cy="222" r="6" fill="#0d0d0f" />
+  <g fill="none" stroke="#ea580c" stroke-linecap="round">
+    <path d="M226,168 C218,142 208,120 182,102 C156,88 140,86 128,88" stroke-width="20" />
+    <path d="M200,128 L206,84" stroke-width="17" />
+    <path d="M180,112 L142,66" stroke-width="17" />
+    <path d="M212,148 L172,116" stroke-width="16" />
+    <path d="M286,168 C294,142 304,120 330,102 C356,88 372,86 384,88" stroke-width="20" />
+    <path d="M312,128 L306,84" stroke-width="17" />
+    <path d="M332,112 L370,66" stroke-width="17" />
+    <path d="M300,148 L340,116" stroke-width="16" />
+  </g>
+</svg>
