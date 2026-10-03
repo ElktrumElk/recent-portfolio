@@ -16,6 +16,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Contact Inbox
+
+Copy the values from `.env.example` into `.env.local` and configure:
+
+- `DATABASE_URL` with the hosted PostgreSQL connection string.
+- `ADMIN_EMAIL` with the only email allowed to sign in.
+- `ADMIN_PASSWORD_HASH` generated with `npm run hash-password -- "your-password"`.
+- `AUTH_SECRET` with a long random value.
+
+The contact table and index are created automatically on the first database request. The private inbox is available at `/admin`; there is intentionally no signup route.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

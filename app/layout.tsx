@@ -3,7 +3,7 @@ import { Archivo, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import HeaderComponet from "./component/HeaderComponent";
 import SmoothScroll from "./component/SmoothScroll";
-import HelixFlash from "./component/HelixFlash/HelixFlash";
+import ScrollReveal from "./component/ScrollReveal";
 import { siteConfig } from "./lib/site";
 import { JsonLd } from "./lib/json-ld";
 
@@ -74,18 +74,18 @@ export const viewport: Viewport = {
   maximumScale: 1,
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#080808" },
+    { media: "(prefers-color-scheme: light)", color: "#eeeae2" },
+    { media: "(prefers-color-scheme: dark)", color: "#111210" },
   ],
 };
 
 const themeInitScript = `(function () {
   try {
     var t = localStorage.getItem("theme");
-    if (t !== "dark" && t !== "light") t = "light";
+    if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", t);
   } catch (e) {
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
   }
 })();`;
 
@@ -106,7 +106,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <JsonLd />
         <SmoothScroll />
-        <HelixFlash />
+        <ScrollReveal />
         <div className="app-shell">
           <HeaderComponet />
           {children}

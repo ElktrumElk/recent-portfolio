@@ -56,22 +56,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const CheckIcon = ({ size = 18 }: { size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
-
 const ArrowLeftIcon = ({ size = 18 }: { size?: number }) => (
   <svg
     width={size}
@@ -106,25 +90,6 @@ const ArrowUpRightIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
-const GitBranchIcon = ({ size = 16 }: { size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <line x1="6" y1="3" x2="6" y2="15" />
-    <circle cx="18" cy="6" r="3" />
-    <circle cx="6" cy="18" r="3" />
-    <path d="M18 9a9 9 0 0 1-9 9" />
-  </svg>
-);
-
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
@@ -133,6 +98,8 @@ export default async function ProjectDetailPage({ params }: Props) {
   const IconComp = iconMap[project.icon] || LayersIcon;
   const catInfo = projectCategories[project.category];
   const fullUrl = `${siteConfig.url}/projects/${project.slug}`;
+  const projectIndex = projects.findIndex((item) => item.id === project.id);
+  const nextProject = projects[(projectIndex + 1) % projects.length];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -158,102 +125,108 @@ export default async function ProjectDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div
+      <main
         className="pd-page"
         style={{ "--accent-hl": project.color } as React.CSSProperties}
       >
-        <Link className="pd-back" href="/#projects">
-          <ArrowLeftIcon />
-          Projects
-        </Link>
+        <div className="pd-frame pd-topbar pd-mount pd-mount--1">
+          <Link className="pd-back" href="/#work">
+            <ArrowLeftIcon /> Back to selected work
+          </Link>
+          <span>Case study / {String(projectIndex + 1).padStart(2, "0")}</span>
+        </div>
 
-        <header className="pd-hero">
-          <div
-            className="pd-hero__gradient"
-            style={{
-              background: `linear-gradient(135deg, ${project.color}22, ${project.color}08)`,
-            }}
-          >
-            <div className="pd-hero__icon" style={{ color: `${project.color}55` }}>
-              <IconComp size={72} color={project.color} />
+        <header className="pd-frame pd-hero">
+          <div className="pd-hero__copy pd-mount pd-mount--2">
+            <div className="pd-hero__meta">
+              <span className="pd-category" style={{ color: catInfo.color }}>{catInfo.label}</span>
+              <span className="pd-meta-line" />
+              <span>{project.dateStarted.slice(0, 4)}</span>
+            </div>
+            <h1>{project.name}</h1>
+            <p>{project.description}</p>
+            <div className="pd-hero__actions">
+              {project.liveLink && (
+                <a className="pd-btn pd-btn--primary" href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                  Visit live project <ArrowUpRightIcon />
+                </a>
+              )}
+              {project.repoLink && (
+                <a className="pd-text-link" href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                  View source <ArrowUpRightIcon />
+                </a>
+              )}
             </div>
           </div>
-          <div className="pd-hero__info">
-            <div className="pd-hero__meta">
-              <span className="pd-category" style={{ color: catInfo.color }}>
-                {catInfo.label}
-              </span>
-              <span className={`pd-status pd-status--${project.status}`}>
-                {project.status}
-              </span>
+
+          <div className="pd-visual pd-mount pd-mount--3">
+            <div className="pd-visual__grid" />
+            <span className="pd-visual__index">EC / {String(projectIndex + 1).padStart(2, "0")}</span>
+            <div className="pd-visual__orb" style={{ background: `radial-gradient(circle at 35% 30%, ${project.color}, color-mix(in srgb, ${project.color} 34%, #111210) 62%, #111210)` }}>
+              <IconComp size={72} color="#f4f0e8" />
             </div>
-            <h1 className="pd-title">{project.name}</h1>
-            <p className="pd-tagline">{project.description}</p>
-            <span className="pd-dates">
-              {project.dateStarted}
-              {project.dateEnded ? ` — ${project.dateEnded}` : " — Present"}
-            </span>
+            <span className={`pd-status pd-status--${project.status}`}>{project.status}</span>
           </div>
         </header>
 
-        <section className="pd-section">
-          <h2 className="pd-section__title">Overview</h2>
-          <p className="pd-section__body">{project.longDescription}</p>
-        </section>
-
-        <section className="pd-section">
-          <h2 className="pd-section__title">Key Features</h2>
-          <ul className="pd-features">
-            {project.features.map((feature) => (
-              <li key={feature} className="pd-feature">
-                <span className="pd-feature__check">
-                  <CheckIcon />
-                </span>
-                {feature}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="pd-section">
-          <h2 className="pd-section__title">Tech Stack</h2>
-          <div className="pd-tech">
-            {project.techStack.map((tech) => (
-              <span key={tech} className="pd-tech__tag">
-                {tech}
-              </span>
-            ))}
+        <section className="pd-frame pd-overview" data-reveal>
+          <div className="pd-section-label"><span>01</span><p>Overview</p></div>
+          <div className="pd-overview__body">
+            <p className="pd-lead">{project.longDescription}</p>
+            <dl className="pd-facts">
+              <div><dt>Discipline</dt><dd>{catInfo.label}</dd></div>
+              <div><dt>Timeline</dt><dd>{project.dateStarted} - {project.dateEnded ?? "Present"}</dd></div>
+              <div><dt>Status</dt><dd>{project.status}</dd></div>
+              <div><dt>Role</dt><dd>Product engineering</dd></div>
+            </dl>
           </div>
         </section>
 
-        <div className="pd-actions">
-          {project.liveLink && (
-            <a
-              className="pd-btn pd-btn--primary"
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-              <ArrowUpRightIcon />
-            </a>
-          )}
-          {project.repoLink && (
-            <a
-              className="pd-btn pd-btn--ghost"
-              href={project.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitBranchIcon />
-              View Source
-            </a>
-          )}
-          <Link className="pd-btn pd-btn--ghost" href="/#projects">
-            Back to projects
+        <section className="pd-feature-section" data-reveal>
+          <div className="pd-frame">
+            <div className="pd-section-label pd-section-label--light"><span>02</span><p>Core experience</p></div>
+            <div className="pd-feature-heading">
+              <h2>Designed around what matters.</h2>
+              <p>Core functionality shaped into a clear, dependable experience.</p>
+            </div>
+            <ol className="pd-features">
+              {project.features.map((feature, index) => (
+                <li key={feature} data-reveal data-reveal-delay={index % 3}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{feature}</h3>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="pd-frame pd-stack-section" data-reveal>
+          <div className="pd-section-label"><span>03</span><p>Technology</p></div>
+          <div>
+            <h2>A focused stack for reliable delivery.</h2>
+            <div className="pd-tech">
+              {project.techStack.map((tech, index) => (
+                <span key={tech}><i>{String(index + 1).padStart(2, "0")}</i>{tech}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <nav className="pd-next" aria-label="Project navigation" data-reveal>
+          <div className="pd-frame pd-next__inner">
+            <div><span>Next project</span><p>Keep exploring the work</p></div>
+            <Link href={`/projects/${nextProject.slug}`}>
+              {nextProject.name} <ArrowUpRightIcon size={30} />
+            </Link>
+          </div>
+        </nav>
+
+        <div className="pd-frame pd-return" data-reveal>
+          <Link href="/#work">
+            <ArrowLeftIcon /> Return to all selected work
           </Link>
         </div>
-      </div>
+      </main>
     </>
   );
 }

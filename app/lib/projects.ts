@@ -40,6 +40,58 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "M2M",
+    name: "M2M",
+    slug: "m2m",
+    color: "#0141f0",
+    description:
+      "M2M connects girls with mentors who listen, understand, and help turn possibility into progress.",
+    longDescription:
+      "Meaningful guidance can change a life. M2M connects girls with mentors who listen, understand, and help turn possibility into progress.",
+    category: "fullstack",
+    status: "active",
+    techStack: ["RSC", "Next.js", "TypeScript", "GOLang", "Postgres"],
+    features: [
+      "landing page",
+      "Overview",
+      "Community & chat",
+      "Explore",
+      "Session Schedule",
+      "Voice call",
+      "video call",
+      "Share workspace(between mentor and mentee)"
+      
+    ],
+    repoLink: "https://github.com/ElktrumElk/m2m",
+    liveLink: "https://m2m-smoky.vercel.app",
+    dateStarted: "2026-09",
+    dateEnded: null,
+    icon: "Newspaper",
+    seo: {
+      title: "Mentor-Mentee",
+      description:
+        "M2M connects girls with mentors who listen, understand, and help turn possibility into progress.",
+      keywords: [
+        "mentor",
+        "mentee",
+        "mentor to mentee",
+        "connections",
+        "connect",
+        "girls",
+        "connection for girls",
+        "mentorship",
+        "",
+        "sierra leone shipping company",
+      ],
+      openGraph: {
+        title: "Mentor-Mentee",
+        description:
+          "M2M connects girls with mentors who listen, understand, and help turn possibility into progress.",
+        type: "website",
+      },
+    },
+  },
+  {
     id: "sky",
     name: "Sky",
     slug: "sky",
