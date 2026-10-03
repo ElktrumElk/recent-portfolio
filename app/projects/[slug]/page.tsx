@@ -53,6 +53,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/projects/${project.slug}`,
       siteName: siteConfig.title,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+      creator: siteConfig.handle,
+    },
   };
 }
 

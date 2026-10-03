@@ -5,7 +5,6 @@ import HeaderComponet from "./component/HeaderComponent";
 import SmoothScroll from "./component/SmoothScroll";
 import ScrollReveal from "./component/ScrollReveal";
 import { siteConfig } from "./lib/site";
-import { JsonLd } from "./lib/json-ld";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -58,12 +57,22 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.image,
+        width: 810,
+        height: 1080,
+        alt: `${siteConfig.name}, software developer in ${siteConfig.location}`,
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
     creator: siteConfig.handle,
+    images: [siteConfig.image],
   },
 };
 
@@ -104,7 +113,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
-        <JsonLd />
         <SmoothScroll />
         <ScrollReveal />
         <div className="app-shell">

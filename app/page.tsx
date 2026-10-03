@@ -5,6 +5,7 @@ import ContactForm from "./component/ContactForm";
 import { experiences } from "./lib/experience";
 import { projects } from "./lib/projects";
 import { siteConfig } from "./lib/site";
+import { JsonLd } from "./lib/json-ld";
 import "./portfolio.css";
 
 const selectedProjects = projects.slice(0, 4);
@@ -45,6 +46,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 export default function Home() {
   return (
     <main className="portfolio-main">
+      <JsonLd />
       <section className="hero" id="home">
         <div className="hero-grid" aria-hidden="true" />
         <div className="page-frame hero-inner">

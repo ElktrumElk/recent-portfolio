@@ -6,6 +6,8 @@ export const siteConfig: {
   github: string;
   twitter: string;
   handle: string;
+  image: string;
+  location: string;
   description: string;
   keywords: string[];
 } = {
@@ -16,8 +18,10 @@ export const siteConfig: {
   github: "https://github.com/ElktrumElk",
   twitter: "https://x.com/ElktrumElk",
   handle: "@ElktrumElk",
+  image: "https://elktrumelk.xyz/me.jpeg",
+  location: "Freetown, Sierra Leone",
   description:
-    "Elkanah Cole is a fullstack developer crafting sophisticated, accessible web and mobile interfaces with React, Next.js, TypeScript, Node.js, and Flutter — from concept to deployment.",
+    "Elkanah Cole is a full-stack software developer based in Freetown, Sierra Leone, crafting sophisticated, accessible web and mobile products from concept to deployment.",
   keywords: [
     "Elkanah Cole",
     "Elktrum Elk",
@@ -25,6 +29,12 @@ export const siteConfig: {
     "software developer",
     "fullstack developer",
     "frontend developer",
+    "software developer in Freetown",
+    "web developer Freetown",
+    "full-stack developer Sierra Leone",
+    "software engineer Sierra Leone",
+    "mobile app developer Sierra Leone",
+    "Freetown Sierra Leone developer",
     "React",
     "Next.js",
     "TypeScript",
@@ -35,6 +45,8 @@ export const siteConfig: {
     "accessible interfaces",
     "Sierra Leone Devs",
     "Salone Devs",
-    "github users"
+    "github users",
+    "Freetown",
+    "Sierra Leone"
   ],
 };

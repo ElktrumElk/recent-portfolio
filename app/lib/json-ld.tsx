@@ -5,12 +5,39 @@ function buildPersonSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteConfig.url}/#person`,
     name: siteConfig.name,
     url: siteConfig.url,
+    image: {
+      "@type": "ImageObject",
+      "@id": `${siteConfig.url}/#profile-image`,
+      url: siteConfig.image,
+      contentUrl: siteConfig.image,
+      width: 810,
+      height: 1080,
+      caption: `${siteConfig.name}, software developer in ${siteConfig.location}`,
+    },
     jobTitle: siteConfig.role,
     description: siteConfig.description,
     sameAs: [siteConfig.github, siteConfig.twitter],
-   knowsAbout: siteConfig.keywords,
+    knowsAbout: siteConfig.keywords,
+    homeLocation: {
+      "@type": "Place",
+      name: siteConfig.location,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Freetown",
+        addressCountry: "SL",
+      },
+    },
+    workLocation: {
+      "@type": "Place",
+      name: siteConfig.location,
+    },
+    nationality: {
+      "@type": "Country",
+      name: "Sierra Leone",
+    },
     alumniOf: {
       "@type": "Organization",
       name: "Self-Directed Learning",
@@ -26,13 +53,25 @@ function buildWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     name: siteConfig.title,
     url: siteConfig.url,
     description: siteConfig.description,
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-    },
+    author: { "@id": `${siteConfig.url}/#person` },
+    sameAs: [siteConfig.github, siteConfig.twitter],
+  };
+}
+
+function buildProfilePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteConfig.url}/#profile`,
+    url: siteConfig.url,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    primaryImageOfPage: { "@id": `${siteConfig.url}/#profile-image` },
+    mainEntity: { "@id": `${siteConfig.url}/#person` },
   };
 }
 
@@ -60,6 +99,7 @@ function buildProjectSchemas() {
 export function JsonLd() {
   const personSchema = buildPersonSchema();
   const websiteSchema = buildWebsiteSchema();
+  const profilePageSchema = buildProfilePageSchema();
   const projectSchemas = buildProjectSchemas();
 
   return (
@@ -71,6 +111,10 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
       {projectSchemas.map((schema, idx) => (
         <script
