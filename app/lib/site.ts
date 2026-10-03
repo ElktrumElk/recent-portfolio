@@ -6,7 +6,6 @@ export const siteConfig: {
   github: string;
   twitter: string;
   handle: string;
-  image: string;
   location: string;
   description: string;
   keywords: string[];
@@ -18,7 +17,6 @@ export const siteConfig: {
   github: "https://github.com/ElktrumElk",
   twitter: "https://x.com/ElktrumElk",
   handle: "@ElktrumElk",
-  image: "https://elktrumelk.xyz/me.jpeg",
   location: "Freetown, Sierra Leone",
   description:
     "Elkanah Cole is a full-stack software developer based in Freetown, Sierra Leone, crafting sophisticated, accessible web and mobile products from concept to deployment.",

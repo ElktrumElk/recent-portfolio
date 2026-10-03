@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: siteConfig.url,
       changeFrequency: "weekly",
       priority: 1,
-      images: [siteConfig.image],
     },
     ...projectUrls,
   ];

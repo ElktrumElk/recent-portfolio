@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitMessage, type FormState } from "../actions";
+import { ArrowUpLeft, ArrowUpRight } from "elk-components/icons";
 
 const initialFormState: FormState = { status: "idle", message: "" };
 
@@ -34,7 +35,9 @@ export default function ContactForm() {
         </p>
         <button className="form-submit" type="submit" disabled={pending}>
           {pending ? "Sending..." : "Send message"}
-          <span aria-hidden="true">↗</span>
+          <span aria-hidden="true">
+            <ArrowUpRight size={20} />
+          </span>
         </button>
       </div>
     </form>

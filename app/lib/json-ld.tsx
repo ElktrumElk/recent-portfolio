@@ -8,15 +8,6 @@ function buildPersonSchema() {
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.name,
     url: siteConfig.url,
-    image: {
-      "@type": "ImageObject",
-      "@id": `${siteConfig.url}/#profile-image`,
-      url: siteConfig.image,
-      contentUrl: siteConfig.image,
-      width: 810,
-      height: 1080,
-      caption: `${siteConfig.name}, software developer in ${siteConfig.location}`,
-    },
     jobTitle: siteConfig.role,
     description: siteConfig.description,
     sameAs: [siteConfig.github, siteConfig.twitter],
@@ -70,7 +61,6 @@ function buildProfilePageSchema() {
     url: siteConfig.url,
     name: siteConfig.title,
     description: siteConfig.description,
-    primaryImageOfPage: { "@id": `${siteConfig.url}/#profile-image` },
     mainEntity: { "@id": `${siteConfig.url}/#person` },
   };
 }
